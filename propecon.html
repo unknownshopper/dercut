@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propuesta Económica · Dermo Cutánea</title>
+  <style>
+    :root { --maxw: 980px; --space: 8px; --bmw: #1C69D4; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+
+    /* Navbar */
+    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .navbar .brand { display: flex; align-items: center; gap: 10px; }
+    .navbar .brand img { height: 28px; width: auto; }
+    .navbar .links { display: flex; gap: 16px; align-items: center; }
+    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+    @media (max-width: 720px) {
+      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
+      .navbar .links a { padding: 6px 4px; }
+      .navbar.open .links { display: flex; }
+      .navbar .toggle { display: inline-block; }
+    }
+
+    /* Header */
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: var(--bmw); }
+    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
+    .title .brand { display: flex; align-items: center; gap: 10px; }
+    .title .brand .logo { height: 40px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right; }
+    .meta { color: #fff; font-size: 14px; flex: 1 1 100%; text-align: center; }
+
+    /* Sections */
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+    .right { text-align: right; }
+    .muted { color: #666; font-size: 13px; }
+
+    .totals { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .total { border: 1px solid #ddd; border-radius: 10px; padding: 12px 14px; background: #fafafa; }
+
+    /* Footer */
+    .footer { padding-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Print */
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { margin: 0; }
+      .wrap { width: 210mm; padding: 10mm; max-width: none; margin: 0 auto; }
+      /* Ocultamos el header azul para evitar texto blanco sobre fondo blanco */
+      header { display: none !important; }
+      /* Cabecera ejecutiva para PDF */
+      .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
+      .print-header .left { display: flex; align-items: center; gap: 8px; }
+      .print-header .right { text-align: right; }
+      .print-header .logo { height: 14mm; width: auto; }
+      .print-header h1 { margin: 0; font-size: 18px; color: #111; }
+      .print-header .sub { font-size: 12px; color: #555; }
+      .section, .card, .title, ul, li { break-inside: avoid; page-break-inside: avoid; }
+      .footer { width: 210mm; padding: 0 10mm; margin: 0 auto; }
+      .actions, .navbar { display: none !important; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+
+    .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
+    .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .btn:hover { filter: brightness(0.97); }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="topnav">
+    <div class="inner">
+      <div class="brand">
+        <img src="tus.png" alt="The Unknown Shopper" />
+      </div>
+      <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+      <div class="links">
+        <!-- <a href="estructura.html">Estructura</a>
+        <a href="briefemp.html">Brief</a>
+        <a href="sla.html">SLA</a>
+        <a href="aviso.html">Aviso</a> -->
+        <a href="propeco.html" class="active">Propuesta de Redes</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header" style="display:none">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Propuesta Económica</h1>
+        <div class="sub">Tabasco · Veracruz · Chiapas · Campeche · Mérida · Quintana Roo</div>
+      </div>
+    </div>
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png" alt="Dermo Cutánea" class="logo" />
+          <h1>Propuesta Económica</h1>
+        </div>
+        <div class="meta">Tabasco · Veracruz · Chiapas · Campeche · Mérida · Quintana Roo</div>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">Descargar PDF</button>
+      </div>
+    </header>
+
+    <section class="section">
+      <h2>Honorarios</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Unknown Shopper (Dirección y estrategia)</strong>
+          <ul>
+            <li>Coordinación general, calendario, revisión de contenidos.</li>
+            <li>Reuniones de seguimiento y tablero quincenal.</li>
+            <li>Optimización de pauta y performance con el diseñador/CM.</li>
+          </ul>
+          <div class="right"><strong>$ 16,000 MXN</strong> / mes</div>
+        </div>
+        <div class="card">
+          <strong>Diseñador / Community Manager</strong>
+          <ul>
+            <li>Diseño/adaptación de piezas, publicaciones y moderación.</li>
+            <li>Atención a DM/comentarios bajo SLA.</li>
+            <li>Producción básica (reels/carruseles) y coordinación con tiendas.</li>
+          </ul>
+          <div class="right"><strong>$ 4,000 MXN</strong> / mes</div>
+        </div>
+      </div>
+      <p class="muted">Notas: honorarios mensuales, no incluyen IVA.</p>
+    </section>
+
+    <section class="section">
+      <h2>Alcance y obligaciones</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Obligaciones de Unknown Shopper</strong>
+          <ul>
+            <li>Estrategia editorial por estado y guía de marca.</li>
+            <li>Calendario y revisión de materiales en 24 h.</li>
+            <li>Reporte quincenal con ventas atribuibles.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <strong>Obligaciones del Diseñador/CM</strong>
+          <ul>
+            <li>Producción/adaptación de piezas, carga y publicación.</li>
+            <li>Moderación y atención en DM/comentarios bajo SLA.</li>
+            <li>Curaduría de UGC con sucursales y posteos locales.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Costos de producción</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Producción mensual estimada</strong>
+          <ul>
+            <li>Sesiones ligeras de foto/video para piezas clave.</li>
+            <li>Herramientas (plataformas de diseño/colaboración).</li>
+            <li>Desplazamientos locales según calendario.</li>
+          </ul>
+          <div class="right"><strong>$ 2,000 MXN</strong> / mes</div>
+        </div>
+      </div>
+      <p class="muted">Los costos de producción se ajustan por campaña y región.</p>
+    </section>
+
+    <section class="section">
+      <h2>Pauta (medios)</h2>
+      <div class="grid">
+        <div class="card">
+          <strong>Meta / TikTok / Google</strong>
+          <ul>
+            <li>Prospección regional y remarketing.</li>
+            <li>Objetivos a CPA/ROAS; ajustes semanales.</li>
+          </ul>
+          <div class="right"><strong>$ 2,000 MXN</strong> / mes</div>
+        </div>
+      </div>
+      <p class="muted">La inversión en pauta la paga el cliente directamente a las plataformas.</p>
+    </section>
+
+    <section class="section">
+      <h2>Totales y condiciones</h2>
+      <div class="totals">
+        <div class="total">
+          <div><strong>Honorarios</strong></div>
+          <div>$ 20,000 MXN / mes</div>
+        </div>
+        <div class="total">
+          <div><strong>Producción</strong></div>
+          <div>$ 2,000 MXN / mes</div>
+        </div>
+        <div class="total">
+          <div><strong>Pauta</strong></div>
+          <div>$ 2,000 MXN / mes (pagada por el cliente)</div>
+        </div>
+      </div>
+      <ul>
+        <li>Vigencia inicial: 3 meses, renovable.</li>
+        <li>Facturación mensual, pago contra entrega de reporte.</li>
+        <li>Precios no incluyen IVA.</li>
+      </ul>
+    </section>
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="aviso.html">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2025</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav = document.getElementById('topnav');
+      var btn = document.getElementById('navToggle');
+      if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+    })();
+  </script>
+</body>
+</html>
