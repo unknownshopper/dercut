@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dermo Cutánea · Portada</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav class="navbar" id="topnav">
+    <div class="inner">
+      <div class="brand">
+        <img src="tus.png" alt="The Unknown Shopper" class="logo" />
+      </div>
+      <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+      <div class="links">
+        <a href="estructura.html">Estructura</a>
+        <a href="briefemp.html">Brief</a>
+        <a href="sla.html">SLA</a>
+        <a href="aviso.html">Aviso</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="brand">
+        <img src="dercut.png" alt="Dermo Cutánea" class="logo" />
+        <h1>Dermo Cutánea</h1>
+      </div>
+      <div class="subtitle">Bienvenido. Selecciona una sección para continuar:</div>
+      <div class="links">
+        <a class="card" href="estructura.html">Estructura de la Propuesta</a>
+        <a class="card" href="briefemp.html">Brief Ejecutivo</a>
+        <a class="card" href="sla.html">SLAs</a>
+        <a class="card" href="aviso.html">Aviso de Privacidad</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="login">
+    <div class="wrap">
+      <div class="login-card" role="form" aria-labelledby="login-title">
+        <h2 id="login-title">Acceso</h2>
+        <p class="muted">Ingresa con tu correo corporativo para continuar.</p>
+        <form id="loginForm" autocomplete="on">
+          <label class="field">
+            <span>Correo</span>
+            <input type="email" name="email" placeholder="correo@empresa.com" required />
+          </label>
+          <label class="field">
+            <span>Contraseña</span>
+            <input type="password" name="password" placeholder="••••••••" minlength="6" required />
+          </label>
+          <div class="row between">
+            <label class="check">
+              <input type="checkbox" name="remember" />
+              <span>Recordarme</span>
+            </label>
+            <a class="link" href="#" id="forgotLink">¿Olvidaste tu contraseña?</a>
+          </div>
+          <button type="submit" class="btn primary">Entrar</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="aviso.html">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2025</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

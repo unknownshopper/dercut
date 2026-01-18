@@ -35,7 +35,7 @@
       header .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; flex-wrap: wrap; }
       header .title .brand { display: flex; align-items: center; gap: 10px; }
       header .title .brand .logo { height: 36px; width: auto; display: block; }
-      h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.2px; margin: 0; color: #fff; }
+      h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.2px; margin: 0; color: #fff; text-align: right; }
       .meta { color: #fff; font-size: 14px; }
       @media (max-width: 900px) {
         header .title { gap: 8px; }
@@ -186,8 +186,8 @@
       <div id="talento" class="section">
         <h2>Activación del talento interno</h2>
         <ul>
-          <li>Seleccionar 2–3 vendedores por estado como embajadores (video-first).</li>
-          <li>Formación 4–6 semanas: fundamentos, producción móvil, storytelling, métricas y social selling.</li>
+          <li>Seleccionar 2-3 vendedores por estado como embajadores (video-first).</li>
+          <li>Formación 4-6 semanas: fundamentos, producción móvil, storytelling, métricas y social selling.</li>
           <li>Certificación interna y migración gradual a Community Manager.</li>
           <li>Incentivos: bono por ventas atribuibles (código personal/UTM), reconocimiento mensual.</li>
         </ul>
@@ -237,6 +237,61 @@
           <li>Workshop de arranque (2 h): validar objetivos, productos foco y políticas.</li>
           <li>Selección de embajadores y definición de clústeres regionales.</li>
           <li>Aprobación de presupuesto y calendario del primer mes.</li>
+        </ul>
+      </div>
+
+      <div class="section" id="ventas-social">
+        <h2>¿Cómo se verán reflejadas las ventas atribuibles a Social Media?</h2>
+        <ul>
+          <li><strong>Identificación directa por canal</strong>
+            <ul>
+              <li>UTM + checkout: registrar <em>source/medium/campaign</em> en cada compra para ver ventas, ticket y margen por campaña.</li>
+              <li>Códigos/cupones exclusivos por canal, creador o región: cada canje = venta atribuida 1:1.</li>
+              <li>Landing pages dedicadas por campaña/segmento: ventas en esa URL se atribuyen inequívocamente.</li>
+              <li>WhatsApp/Teléfono trackeado y QR: números/QR únicos por campaña; ventas cerradas desde ese origen quedan marcadas como social.</li>
+            </ul>
+          </li>
+          <li><strong>Vinculación con tienda física</strong>
+            <ul>
+              <li>QR y códigos en materiales por sucursal; canje en caja = atribución a la acción social.</li>
+              <li>Campo “origen” en POS/CRM (p. ej. IG-Tabasco-Ene) para registrar ventas con procedencia social.</li>
+              <li>Promos “solo social” redimibles en tienda para medir impacto directo.</li>
+            </ul>
+          </li>
+          <li><strong>Atribución técnica en web/app</strong>
+            <ul>
+              <li>Eventos de compra completos (Purchase) vía pixel y server-side (CAPI) para reducir pérdida de señal.</li>
+              <li>Enviar <em>content_ids</em>, categorías y margen estimado para medir ROAS con calidad.</li>
+              <li>Seguimiento de cohortes y LTV: marcar <em>first touch</em> social y monitorear recompra.</li>
+            </ul>
+          </li>
+          <li><strong>DM y atención</strong>
+            <ul>
+              <li>Pipeline de ventas en DM: cada caso con <em>case ID</em>; si compra, se cierra “Ganada” con valor.</li>
+              <li>Relación SLA de respuesta vs. conversión: demostrar impacto del tiempo de respuesta en cierres.</li>
+            </ul>
+          </li>
+          <li><strong>Validación más allá del last click</strong>
+            <ul>
+              <li>Lift tests geográficos (A/B por zona) para medir delta de ventas con/ sin activación social.</li>
+              <li>Periodos con/sin pauta por categoría o región (holdout) y análisis de series de tiempo.</li>
+              <li>Encuesta post-compra (“¿Cómo nos conociste?”) para capturar dark social.</li>
+              <li>Modelos MMM ligeros cuando haya histórico para estimar contribución.</li>
+            </ul>
+          </li>
+          <li><strong>Métricas orientadas a negocio</strong>
+            <ul>
+              <li>Ventas atribuidas por canal/campaña (unidades, ingreso y margen).</li>
+              <li>ROAS, MER (ingreso total/gasto), CAC y LTV/CAC por cohorte originada en social.</li>
+              <li>% de ventas en tienda con código/QR social y conversión de DMs a ventas.</li>
+            </ul>
+          </li>
+          <li><strong>Cadencia y gobierno</strong>
+            <ul>
+              <li>Tablero quincenal por región/canal con ventas, margen, ROAS, CAC, y conversión de DMs.</li>
+              <li>Revisión de pruebas (A/B/geo-holdout) para decidir: duplicar, pausar o iterar.</li>
+            </ul>
+          </li>
         </ul>
       </div>
 

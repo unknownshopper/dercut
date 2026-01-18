@@ -25,13 +25,13 @@
           .navbar .toggle { display: inline-block; }
         }
         header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: #1C69D4; }
-        .title { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; }
-        .title .brand { display: flex; align-items: center; gap: 10px; }
+        .title { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
+        .title .brand { display: flex; align-items: center; gap: 10px; justify-content: space-between; flex: 1 1 100%; }
         .title .brand .logo { height: 40px; width: auto; display: block; filter: drop-shadow(0 0 1px rgba(0,0,0,.35)); }
         .navbar .brand .logo { height: 28px; width: auto; display: block; filter: drop-shadow(0 0 1px rgba(0,0,0,.35)); }
         h1 { margin: 0; font-size: 32px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right;}
         h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; line-height: 1.35; }
-        .meta { color: #ffffff; font-size: 14px; }
+        .meta { color: #ffffff; font-size: 14px; flex: 1 1 100%; margin-top: 4px; text-align: center; }
         .section { padding: calc(var(--space) * 2) 0; border-top: 1px solid #f2f2f2; }
         .lead { font-size: 17px; color: #222; margin: 0; }
         p { margin: 0 0 calc(var(--space) * 2); }
@@ -102,6 +102,7 @@
                 <li><strong>Fase: Presupuesto</strong> — Aprobación del cliente
                     <ul>
                         <li>Honorarios de gestión de Unknown Shopper.</li>
+                        <li>Honorarios de Diseñador/CM.</li>
                         <li>Bolsa de pauta (Meta/Google/TikTok) pagada por el cliente.</li>
                         <li>Producción y herramientas (según calendario).</li>
                         <li>Condiciones de pago: anticipo y cierre mensual contra reporte.</li>
@@ -136,82 +137,7 @@
                     </ul>
                 </li>
             </ul>
-            <div class="section" id="anexo-ejecutivo-ventas">
-            <h2>Anexo ejecutivo: ¿Cómo veremos las ventas generadas por Redes?</h2>
-            <ul>
-                <li><strong>Cómo sabremos que una venta viene de redes</strong>
-                    <ul>
-                        <li>Enlaces con etiquetas que nos dicen de dónde vino la compra.</li>
-                        <li>Códigos y cupones distintos por publicación/persona/región; si se usan, la venta cuenta para esa acción.</li>
-                        <li>Páginas especiales con dirección única para cada campaña.</li>
-                        <li>Números de WhatsApp o QR diferentes por campaña.</li>
-                    </ul>
-                </li>
-                <li><strong>Qué pasa en tienda física</strong>
-                    <ul>
-                        <li>Carteles y QR por sucursal; si el cliente los usa o muestra el código en caja, la venta se marca como “de redes”.</li>
-                        <li>En la caja registramos un campo “origen” para dejar constancia.</li>
-                        <li>Promos exclusivas “vistas en redes” para medir su efecto directo.</li>
-                    </ul>
-                </li>
-                <li><strong>Qué medimos en la web/app</strong>
-                    <ul>
-                        <li>Registramos cada compra con su valor para que no se pierda la señal.</li>
-                        <li>Identificamos los productos comprados para saber qué funciona mejor.</li>
-                        <li>Seguimos a los clientes que nos conocieron por redes para ver sus recompras.</li>
-                    </ul>
-                </li>
-                <li><strong>Ventas que nacen en los mensajes (DM)</strong>
-                    <ul>
-                        <li>Cada conversación tiene un folio; si termina en compra, la marcamos como ganada y con cuánto se vendió.</li>
-                        <li>Medimos cómo mejora la conversión cuando respondemos más rápido.</li>
-                    </ul>
-                </li>
-                <li><strong>Cómo comprobamos que de verdad mueve ventas</strong>
-                    <ul>
-                        <li>Comparamos zonas con campaña vs. zonas sin campaña.</li>
-                        <li>Encendemos y apagamos campañas por periodos para ver la diferencia.</li>
-                        <li>Preguntamos “¿Cómo nos conociste?” al final de la compra.</li>
-                        <li>Con historial, hacemos un cálculo sencillo del aporte de redes.</li>
-                    </ul>
-                </li>
-                <li><strong>Indicadores que importan</strong>
-                    <ul>
-                        <li>Ventas y margen que llegaron por redes (por campaña y por estado).</li>
-                        <li>Retorno de la inversión, costo por cliente y relación valor del cliente/costo.</li>
-                        <li>Porcentaje de ventas en tienda con código/QR y cuántas conversaciones se convierten en ventas.</li>
-                    </ul>
-                </li>
-                <li><strong>Ritmo de trabajo</strong>
-                    <ul>
-                        <li>Tablero cada 15 días por estado y canal, con decisiones claras de seguir, pausar o ajustar.</li>
-                    </ul>
-                </li>
-            </ul>
         </div>
-        </div>
-        <div class="section" id="plan-ventas-amigable">
-            <h2>Plan claro para estimar y demostrar ventas</h2>
-            <ul>
-                <li><strong>Metas por etapas (30-60-90 días)</strong>: fijamos rangos (mínimo, probable y ambicioso) en lugar de un número mágico desde el día 1.</li>
-                <li><strong>Punto de partida y estimación</strong>: tomamos ventas actuales y usamos una fórmula simple (visitas x conversión x ticket x % atribuible a redes) con 3 escenarios.</li>
-                <li><strong>Primero medimos bien</strong>: links con etiquetas, códigos/QR por estado y un campo “origen” en caja. Sin esto, cualquier estimación se vuelve débil.</li>
-                <li><strong>Ver ventas pronto</strong>: pilotos en 2 estados con oferta “solo social”, 2 creatividades y QR en tienda. Cada canje/venta queda con “firma” de redes.</li>
-                <li><strong>Indicadores que sí reflejan dinero</strong>: ventas atribuibles (web y tienda), margen, ROAS, conversión de DMs y % de ventas con código/QR.</li>
-                <li><strong>Ritmo y control</strong>: tablero quincenal por estado/campaña; reglas claras para duplicar, pausar o ajustar según resultados.</li>
-                <li><strong>Hitos transparentes</strong>:
-                    <ul>
-                        <li>Semana 2: tableros funcionando y primeras ventas con códigos/QR.</li>
-                        <li>Semana 4: resultados del piloto y estimación actualizada con datos reales.</li>
-                        <li>Semana 8–12: escalar a más estados si el impacto es positivo.</li>
-                    </ul>
-                </li>
-                <li><strong>Mover la aguja</strong>: promos por temporada, programa de lealtad simple y respuesta rápida en DMs (responder antes de 1 hora ayuda a cerrar más).</li>
-                <li><strong>Riesgos y cómo los manejamos</strong>: el orgánico toma tiempo; la pauta acelera el aprendizaje. Inventario y ofertas influyen y se declaran como supuestos.</li>
-                <li><strong>Mensaje corto para dirección</strong>: “En 2 semanas verás ventas con código/QR; en 4 semanas, un forecast con datos reales; en 8–12, escalamos si el aporte es claro”.</li>
-            </ul>
-        </div>
-        
     </div>
     <footer class="section small footer">
       <div class="footer-grid">
