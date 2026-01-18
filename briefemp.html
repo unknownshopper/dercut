@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dermo Cutánea</title>
+    <style>
+      /* Executive, colorless, print-friendly styles */
+      :root { --maxw: 960px; }
+      html { box-sizing: border-box; }
+      *, *:before, *:after { box-sizing: inherit; }
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        line-height: 1.6;
+        color: #111;
+        background: #fff;
+      }
+      .wrap { max-width: var(--maxw); margin: 0 auto; padding: 40px 24px; }
+      .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+      .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: 12px 24px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+      .navbar .brand { display: flex; align-items: center; gap: 10px; }
+      .navbar .brand img { height: 28px; width: auto; }
+      .navbar .links { display: flex; gap: 16px; align-items: center; }
+      .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+      .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+      .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+      @media (max-width: 720px) {
+        .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
+        .navbar .links a { padding: 6px 4px; }
+        .navbar.open .links { display: flex; }
+        .navbar .toggle { display: inline-block; }
+      }
+      header { border-bottom: 1px solid #e5e7eb; margin-bottom: 24px; background: #1C69D4; }
+      header .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 20px 0; flex-wrap: wrap; }
+      header .title .brand { display: flex; align-items: center; gap: 10px; }
+      header .title .brand .logo { height: 36px; width: auto; display: block; }
+      h1 { font-size: 28px; font-weight: 700; letter-spacing: 0.2px; margin: 0; color: #fff; }
+      .meta { color: #fff; font-size: 14px; }
+      @media (max-width: 900px) {
+        header .title { gap: 8px; }
+        header .title .meta { flex: 1 1 100%; margin-top: 4px; }
+      }
+      h2 { font-size: 18px; margin: 28px 0 8px; letter-spacing: 0.2px; }
+      p { margin: 0 0 12px; }
+      ul { margin: 8px 0 16px 20px; padding: 0; }
+      li { margin: 4px 0; }
+      .section { padding: 16px 0; border-top: 1px solid #f0f0f0; }
+      .lead { font-size: 16px; color: #333; }
+      .grid { display: grid; grid-template-columns: 1fr; gap: 8px 24px; }
+      .kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+      .card { border: 1px solid #e5e7eb; padding: 12px 14px; border-radius: 6px; background: #fff; }
+      .muted { color: #666; }
+      .toc { border: 1px solid #e5e7eb; padding: 12px 14px; border-radius: 6px; background: #fafafa; }
+      .toc a { color: inherit; text-decoration: none; }
+      .toc a:hover { text-decoration: underline; }
+      a { color: inherit; }
+      .small { font-size: 13px; }
+      .footer { padding-top: 16px; }
+      .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+      .footer .col ul { list-style: none; margin: 0; padding: 0; }
+      .footer .col li { margin: 2px 0; }
+      .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+      .footer a:hover { border-bottom-color: #000; }
+      .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+      @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+      @media print {
+        .wrap { padding: 0 12px; }
+        header { border: 0; margin-bottom: 8px; }
+        .toc { break-inside: avoid; }
+        .card { break-inside: avoid; }
+      }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="topnav">
+      <div class="inner">
+        <div class="brand">
+          <img src="tus.png" alt="The Unknown Shopper" />
+        </div>
+        <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+        <div class="links">
+          <a href="estructura.html">Estructura</a>
+          <a href="briefemp.html" class="active">Brief</a>
+          <a href="sla.html">SLA</a>
+          <a href="aviso.html">Aviso</a>
+        </div>
+      </div>
+    </nav>
+    <div class="wrap">
+      <header>
+        <div class="title">
+          <div class="brand">
+            <img src="dercut.png" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+            <h1>Propuesta Departamento de Redes · Dermo Cutánea</h1>
+          </div>
+          <div class="meta">Tabasco · Veracruz · Chiapas · Campeche · Mérida · Quintana Roo</div>
+        </div>
+      </header>
+
+      <div class="section">
+        <p class="lead">Objetivo principal: activar ventas en e-commerce, secundario: tiendas físicas; mediante redes sociales, con contenido institucional y regionalizado.</p>
+      </div>
+
+      <div class="section toc">
+        <strong>Contenido</strong>
+        <ul>
+          <li><a href="#equipo">Estructura del equipo</a></li>
+          <li><a href="#contenido">Lineamientos de contenido</a></li>
+          <li><a href="#regionalizacion">Regionalización</a></li>
+          <li><a href="#promos">Promociones y lealtad</a></li>
+          <li><a href="#talento">Activación del talento interno</a></li>
+          <li><a href="#kpis">KPIs y medición</a></li>
+          <li><a href="#paid">Paid media</a></li>
+          <li><a href="#tech">Tech y procesos</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#pasos">Próximos pasos</a></li>
+        </ul>
+      </div>
+
+      <div id="equipo" class="section">
+        <h2>Estructura del equipo (lean, escalable)</h2>
+        <ul>
+          <li><strong>Líder de Social & Growth</strong>: estrategia, KPIs, coordinación con e-commerce.</li>
+          <li><strong>Community Managers </strong>: Regionales y Central.</li>
+          <li><strong>Content Studio</strong>: 1 creador de video corto + 1 diseñador. Apoyo de embajadores internos (vendedores creadores).</li>
+          <li><strong>Paid Media Specialist</strong>: pauta, audiencias, Meta/Google/TikTok.</li>
+          <li><strong>CRM/Lealtad</strong>: flujos, referidos, integraciones con e-commerce y WhatsApp.</li>
+        </ul>
+      </div>
+
+      <div id="contenido" class="section">
+        <h2>Lineamientos de contenido</h2>
+        <div class="grid">
+          <div class="card">
+            <strong>Pilares</strong>
+            <ul>
+              <li>Educación dermo (piel grasa, sensible, acné, anti-edad, despigmentantes).</li>
+              <li>Rutinas por clima/humedad del sureste.</li>
+              <li>Lanzamientos y best sellers por marca.</li>
+              <li>Casos reales/UGC con clientes y staff.</li>
+              <li>Promociones y lealtad.</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Formatos y frecuencia</strong>
+            <ul>
+              <li>Reels/TikTok 60–90%, carruseles, lives con expertos, guías.</li>
+              <li>Perfil principal: 5–7 posts/sem. Perfiles regionales: 3–5 posts/sem.</li>
+              <li>Calendario mensual con sprints semanales (70% evergreen, 30% táctico).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="regionalizacion" class="section">
+        <h2>Regionalización</h2>
+        <ul>
+          <li>“Dermo Cutánea” como matriz y “Dermo Cutánea ESTADO” donde exista.</li>
+          <li>Segmentar por inventario/ofertas locales, clima y hábitos, KOLs regionales.</li>
+          <li>Gobernanza: guía de marca unificada, librería de assets, aprobación 24h.</li>
+        </ul>
+      </div>
+
+      <div id="promos" class="section">
+        <h2>Promociones y programa de lealtad</h2>
+        <div class="grid">
+          <div class="card">
+            <strong>Promos</strong>
+            <ul>
+              <li>Bundles por rutina, 2x1 por categoría, cupones geo-segmentados.</li>
+              <li>Eventos: quincena, fines largos, Hot Sale, Buen Fin, regreso a clases, Día de la Madre/Padre, verano (fotoprotección).</li>
+            </ul>
+          </div>
+          <div class="card">
+            <strong>Lealtad</strong>
+            <ul>
+              <li>Puntos por compra y UGC (reseña con foto/video); tiers Silver/Gold/Platinum.</li>
+              <li>Referidos con código de staff/clientes; early access a lanzamientos.</li>
+              <li>Integraciones: CRM + WhatsApp Business + e-commerce (códigos únicos por región/CM).</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div id="talento" class="section">
+        <h2>Activación del talento interno</h2>
+        <ul>
+          <li>Seleccionar 2–3 vendedores por estado como embajadores (video-first).</li>
+          <li>Formación 4–6 semanas: fundamentos, producción móvil, storytelling, métricas y social selling.</li>
+          <li>Certificación interna y migración gradual a Community Manager.</li>
+          <li>Incentivos: bono por ventas atribuibles (código personal/UTM), reconocimiento mensual.</li>
+        </ul>
+      </div>
+
+      <div id="kpis" class="section">
+        <h2>KPIs y medición</h2>
+        <div class="kpi-grid">
+          <div class="card"><strong>Alcance/Engagement</strong><div class="muted small">Alcance por estado, ER por formato.</div></div>
+          <div class="card"><strong>Tráfico/Conversión</strong><div class="muted small">Clics al e-commerce, CVR, AOV, ROAS/CPA.</div></div>
+          <div class="card"><strong>Ventas tienda</strong><div class="muted small">Atribución por códigos y región.</div></div>
+          <div class="card"><strong>Lealtad</strong><div class="muted small">Altas, canje, LTV por segmento.</div></div>
+          <div class="card"><strong>UGC</strong><div class="muted small">Piezas/semana e impacto en ventas.</div></div>
+        </div>
+      </div>
+
+      <div id="paid" class="section">
+        <h2>Paid media</h2>
+        <ul>
+          <li>Meta/TikTok Ads: prospecting regional + retargeting de catálogo.</li>
+          <li>Google Search/PMAX: intención alta por marca/problema de piel.</li>
+          <li>Audiencias: por clima/edad/problema de piel; lookalikes de compradores.</li>
+          <li>Presupuesto guía: 5–8% de ventas objetivo mensuales; optimización a CPA/ROAS.</li>
+        </ul>
+      </div>
+
+      <div id="tech" class="section">
+        <h2>Tech y procesos</h2>
+        <ul>
+          <li>Herramientas: Meta/TikTok Business, Google Ads, Hootsuite/Buffer, Notion/Asana, Drive/Frame.io, GA4/Looker, WhatsApp Business API.</li>
+          <li>Flujo: Brief semanal → producción → revisión 24h → publicación → pauta → reporte.</li>
+        </ul>
+      </div>
+
+      <div id="roadmap" class="section">
+        <h2>Roadmap</h2>
+        <ul>
+          <li><strong>Mes 1</strong>: setup de equipo, guía de marca, calendario, pilotos en 2 estados, embajadores iniciales.</li>
+          <li><strong>Mes 2–3</strong>: despliegue regional, lealtad activa, colaboraciones con KOLs.</li>
+          <li><strong>Mes 4–6</strong>: optimización por estado, escalamiento de embajadores, lives con expertos, ROAS ≥ 3–5.</li>
+        </ul>
+      </div>
+
+      <div id="pasos" class="section">
+        <h2>Próximos pasos</h2>
+        <ul>
+          <li>Workshop de arranque (2 h): validar objetivos, productos foco y políticas.</li>
+          <li>Selección de embajadores y definición de clústeres regionales.</li>
+          <li>Aprobación de presupuesto y calendario del primer mes.</li>
+        </ul>
+      </div>
+
+      <footer class="section small footer">
+        <div class="footer-grid">
+          <div class="col">
+            <ul>
+              <li>&nbsp;</li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li><a href="aviso.html">Aviso de Privacidad</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>&nbsp;</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <span>the@unknownshoppers.com</span>
+          <span>&nbsp;</span>
+          <span>The Unknown Shopper © 2025</span>
+        </div>
+      </footer>
+    </div>
+    <script>
+      (function(){
+        var nav = document.getElementById('topnav');
+        var btn = document.getElementById('navToggle');
+        if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+      })();
+    </script>
+
+</body>
+</html>

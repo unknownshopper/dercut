@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SLAs · Dermo Cutánea</title>
+  <style>
+    :root { --maxw: 980px; --space: 8px; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .navbar .brand { display: flex; align-items: center; gap: 10px; }
+    .navbar .brand img { height: 28px; width: auto; }
+    .navbar .links { display: flex; gap: 16px; align-items: center; }
+    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+    @media (max-width: 720px) {
+      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
+      .navbar .links a { padding: 6px 4px; }
+      .navbar.open .links { display: flex; }
+      .navbar .toggle { display: inline-block; }
+    }
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: #1C69D4; }
+    .title { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { height: 40px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 28px; letter-spacing: .2px; color: #fff; }
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
+    h3 { margin: calc(var(--space) * 2) 0 calc(var(--space) * 1); font-size: 16px; }
+    .meta { color: #4a4a4a; font-size: 14px; }
+    .section { padding: calc(var(--space) * 2) 0; border-top: 1px solid #f2f2f2; }
+    .lead { font-size: 16px; color: #222; margin: 0; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: calc(var(--space) * 2) calc(var(--space) * 3); }
+    @media (min-width: 900px) { .grid-2 { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+    .small { font-size: 13px; color: #666; }
+    .footer { padding-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    .footer .col:last-child { justify-self: end; text-align: right; }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    table { width: 100%; border-collapse: collapse; margin: 8px 0 16px; }
+    th, td { border: 1px solid #e6e6e6; padding: 8px 10px; text-align: left; }
+    th { background: #fafafa; font-weight: 600; }
+    code, pre { background: #fafafa; border: 1px solid #e6e6e6; border-radius: 6px; padding: 8px 10px; display: block; overflow-x: auto; }
+    .figure { border: 1px dashed #d9d9d9; border-radius: 8px; padding: 16px; text-align: center; color: #666; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; background:#f5f5f5; border:1px solid #e6e6e6; border-radius:4px; padding:1px 4px; }
+    @media print { .wrap { padding: 0 12px; } header { border: 0; } .card { box-shadow: none; break-inside: avoid; } }
+  </style>
+  <meta name="description" content="Documento explicativo de SLAs: concepto, componentes, ejemplos y métricas para redes sociales y atención al cliente." />
+</head>
+<body>
+  <nav class="navbar" id="topnav">
+    <div class="inner">
+      <div class="brand">
+        <img src="tus.png" alt="The Unknown Shopper" />
+      </div>
+      <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+      <div class="links">
+        <a href="estructura.html">Estructura</a>
+        <a href="briefemp.html">Brief</a>
+        <a href="sla.html" class="active">SLA</a>
+        <a href="aviso.html">Aviso</a>
+      </div>
+    </div>
+  </nav>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png" alt="Dermo Cutánea" class="logo" />
+          <h1>SLAs · Acuerdos de Nivel de Servicio</h1>
+        </div>
+        
+      </div>
+    </header>
+
+    <div class="section">
+      <p class="lead">Un SLA (Service Level Agreement) define el nivel de servicio esperado: tiempos, calidad, disponibilidad y cómo se mide. En redes sociales y atención al cliente, un buen SLA asegura respuestas oportunas, publicaciones a tiempo y resolución de casos con estándares claros.</p>
+    </div>
+
+    <div class="section grid grid-2">
+      <div class="card">
+        <h2>Componentes de un SLA</h2>
+        <ul>
+          <li>Alcance: qué cubre (canales, horarios, idiomas).</li>
+          <li>Metas: tiempos objetivo (respuesta, publicación, resolución).</li>
+          <li>Métricas: cómo se mide (fuentes, definiciones, UTMs).</li>
+          <li>Prioridades: severidad de casos y su tratamiento.</li>
+          <li>Escalamiento: a quién y cuándo escalar.</li>
+          <li>Reportes: frecuencia y formato de entrega.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Ámbitos de aplicación</h2>
+        <ul>
+          <li>Atención en redes: comentarios y DMs.</li>
+          <li>Publicación de contenido: calendario y ventanas de publicación.</li>
+          <li>Gestión de incidencias: stock, quejas, consultas clínicas.</li>
+          <li>Campañas: activación, cambios, pausas y revisión de anuncios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Tabla de severidad y tiempos objetivo</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Severidad</th>
+            <th>Ejemplo</th>
+            <th>Tiempo de respuesta</th>
+            <th>Tiempo de resolución</th>
+            <th>Escalamiento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Crítica (S1)</td>
+            <td>Reclamo público sensible, error de precio masivo, tema médico delicado</td>
+            <td>≤ 30 min</td>
+            <td>≤ 4 h</td>
+            <td>Inmediato a Gerencia + Médico/Legal</td>
+          </tr>
+          <tr>
+            <td>Alta (S2)</td>
+            <td>Pedido pendiente, stock out en promoción</td>
+            <td>≤ 1 h</td>
+            <td>≤ 24 h</td>
+            <td>Operaciones/Ecommerce</td>
+          </tr>
+          <tr>
+            <td>Media (S3)</td>
+            <td>Consulta de producto/rutina, dudas de envío</td>
+            <td>≤ 2 h</td>
+            <td>≤ 48 h</td>
+            <td>CM + Soporte</td>
+          </tr>
+          <tr>
+            <td>Baja (S4)</td>
+            <td>Saludos, UGC sin urgencia</td>
+            <td>≤ 8 h hábiles</td>
+            <td>≤ 3 días hábiles</td>
+            <td>CM</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Notas: DM = mensaje directo; CM = Community Manager; UTM = etiquetas de seguimiento para atribución.</p>
+    </div>
+
+    <div class="section grid grid-2">
+      <div class="card">
+        <h2>Ejemplos prácticos (Redes)</h2>
+        <ul>
+          <li>Comentario de acné en Instagram: respuesta empática en ≤ 2 h con guía general y enlace a artículo/tienda.</li>
+          <li>Queja por alergia: mover a DM en ≤ 30 min, solicitar datos, escalar a área médica si aplica.</li>
+          <li>Solicitud de rutina: plantilla base + productos sugeridos + CTA a cita/tienda.</li>
+          <li>Stock agotado en post: responder con fecha estimada o alternativa; marcar como S2.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Ejemplos prácticos (Publicación)</h2>
+        <ul>
+          <li>Ventana de publicación: ±30 min sobre el horario del calendario.</li>
+          <li>Correcciones menores: ≤ 2 h; cambios de copy o etiquetas.</li>
+          <li>Pausa de campaña sensible: ≤ 30 min tras solicitud de Gerencia.</li>
+          <li>Reporte semanal: cada lunes 10:00 con KPIs y pendientes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Flujo de escalamiento</h2>
+      <div class="figure small">
+        [Diagrama placeholder]
+        <br/>
+        Usuario → CM (triage) → Nivel 2 (Ops/Ecommerce) → Nivel 3 (Gerencia) → Soporte Médico/Legal
+      </div>
+      <pre>
+Triage inicial (CM)        ──► Clasifica S1/S2/S3/S4
+Plantillas de respuesta    ──► Respuesta en público/DM
+Escalamiento según severidad ─► Notifica a canal interno (ej. #escalamientos)
+Seguimiento y cierre       ──► Marcar resuelto y registrar en reporte
+      </pre>
+    </div>
+
+    <div class="section grid grid-2">
+      <div class="card">
+        <h2>Monitoreo y medición</h2>
+        <ul>
+          <li>Fuente de datos: Inbox/Meta, IG Insights, TikTok, GA4, CRM.</li>
+          <li>Definiciones: “respuesta” = primer contacto; “resolución” = cierre del caso.</li>
+          <li>Segmentación: por estado/tienda, tipo de caso y severidad.</li>
+          <li>UTMs: consistencia en campañas y enlaces a tienda.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Gráfico de cumplimiento (ejemplo)</h2>
+        <pre>
+SLA Respuesta ≤2h (semanal)
+Semana 1: ████████████████ 95%
+Semana 2: █████████████ 85%
+Semana 3: ███████████████ 92%
+Semana 4: ██████████████ 88%
+        </pre>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Formato de reporte mensual</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Métrica</th>
+            <th>Meta SLA</th>
+            <th>Resultado</th>
+            <th>Comentarios</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tiempo de respuesta promedio</td>
+            <td>≤ 2 h</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>% respuestas dentro del SLA</td>
+            <td>≥ 90%</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Tiempo de resolución promedio</td>
+            <td>≤ 48 h</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+          <tr>
+            <td>Incidencias S1 resueltas en tiempo</td>
+            <td>100%</td>
+            <td>—</td>
+            <td>—</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="small">Adjuntar evidencias: capturas, enlaces a interacciones, tickets internos y cambios de contenido/campaña.</p>
+    </div>
+
+    <div class="section">
+      <h2>Placeholders de imagen</h2>
+      <div class="grid">
+        <div class="card figure">[Gráfico de embudo de atención]</div>
+        <div class="card figure">[Matriz de severidad S1–S4]</div>
+      </div>
+    </div>
+
+    <footer class="section small footer">
+      <div class="footer-grid">
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><a href="aviso.html">Aviso de Privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>the@unknownshoppers.com</span>
+        <span>&nbsp;</span>
+        <span>The Unknown Shopper © 2025</span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function(){
+      var nav = document.getElementById('topnav');
+      var btn = document.getElementById('navToggle');
+      if(btn && nav){
+        btn.addEventListener('click', function(){ nav.classList.toggle('open'); });
+      }
+    })();
+  </script>
+</body>
+</html>

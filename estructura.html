@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root { --maxw: 980px; --space: 8px; }
+        html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        *, *:before, *:after { box-sizing: inherit; }
+        body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.65; }
+        .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+        .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+        .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+        .navbar .brand { display: flex; align-items: center; gap: 10px; }
+        .navbar .brand img { height: 28px; width: auto; }
+        .navbar .links { display: flex; gap: 16px; align-items: center; }
+        .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+        .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+        .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+        @media (max-width: 720px) {
+          .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
+          .navbar .links a { padding: 6px 4px; }
+          .navbar.open .links { display: flex; }
+          .navbar .toggle { display: inline-block; }
+        }
+        header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: #1C69D4; }
+        .title { display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; }
+        .title .brand { display: flex; align-items: center; gap: 10px; }
+        .title .brand .logo { height: 40px; width: auto; display: block; filter: drop-shadow(0 0 1px rgba(0,0,0,.35)); }
+        .navbar .brand .logo { height: 28px; width: auto; display: block; filter: drop-shadow(0 0 1px rgba(0,0,0,.35)); }
+        h1 { margin: 0; font-size: 32px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right;}
+        h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; line-height: 1.35; }
+        .meta { color: #ffffff; font-size: 14px; }
+        .section { padding: calc(var(--space) * 2) 0; border-top: 1px solid #f2f2f2; }
+        .lead { font-size: 17px; color: #222; margin: 0; }
+        p { margin: 0 0 calc(var(--space) * 2); }
+        ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
+        li { margin: calc(var(--space) * 1) 0; }
+        strong { font-weight: 600; }
+        em { font-style: italic; }
+        a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+        a:hover { text-decoration-thickness: 2px; }
+        .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+        .small { font-size: 13px; color: #666; }
+        .note { color: #666; font-size: 12px; margin-left: 6px; }
+        .footer { padding-top: calc(var(--space) * 2); }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+        .footer .col ul { list-style: none; margin: 0; padding: 0; }
+        .footer .col li { margin: 2px 0; }
+        .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+        .footer a:hover { border-bottom-color: #000; }
+        .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+        @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+        @media (min-width: 900px) {
+          .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: calc(var(--space) * 2) calc(var(--space) * 3); }
+        }
+        @media print { .wrap { padding: 0 12px; } header { border: 0; } .card { box-shadow: none; break-inside: avoid; } a { text-decoration: none; } }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="topnav">
+      <div class="inner">
+        <div class="brand">
+          <img src="tus.png" alt="The Unknown Shopper" class="logo" />
+        </div>
+        <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+        <div class="links">
+          <a href="estructura.html" class="active">Estructura</a>
+          <a href="briefemp.html">Brief</a>
+          <a href="sla.html">SLA</a>
+          <a href="aviso.html">Aviso</a>
+        </div>
+      </div>
+    </nav>
+    <div class="wrap">
+        <header>
+            <div class="title">
+                <div class="brand">
+                    <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+                    <h1>Propuesta Departamento de Redes · Dermo Cutánea</h1>
+                </div>
+                <div class="meta">Tabasco · Veracruz · Chiapas · Campeche · Mérida · Quintana Roo</div>
+            </div>
+        </header>
+        <div class="section">
+            <p class="lead">Objetivo principal: activar ventas en e-commerce, secundario: tiendas físicas; mediante redes sociales, con contenido institucional y regionalizado.</p>
+        </div>
+
+        <div>
+            <ul>
+                <li><strong>Fase: Desarrollo</strong> — Responsable: <em>Unknown Shopper</em>
+                    <ul>
+                        <li>Auditoría rápida de perfiles y flujos actuales.</li>
+                        <li>Lineamientos de marca y guion institucional (tono, claims, do/don't).</li>
+                        <li>UTMs estándar y estructura de reportes.</li>
+                        <li>Calendario piloto (2 semanas) y SLAs de respuesta.</li>
+                        <li>Entrega de propuesta económica para aprobación.</li>
+                        <li class="small">Notas: <span class="note">UTM</span> = etiquetas de seguimiento para atribución de tráfico/ventas; <br><span class="note">SLA</span> = acuerdos de nivel de servicio (tiempos y calidad de atención).</li>
+                    </ul>
+                </li>
+
+                <li><strong>Fase: Presupuesto</strong> — Aprobación del cliente
+                    <ul>
+                        <li>Honorarios de gestión de Unknown Shopper.</li>
+                        <li>Bolsa de pauta (Meta/Google/TikTok) pagada por el cliente.</li>
+                        <li>Producción y herramientas (según calendario).</li>
+                        <li>Condiciones de pago: anticipo y cierre mensual contra reporte.</li>
+                        <li class="small">Notas: <span class="note">CM</span> = responsable de comunidad y publicaciones; <br><span class="note">UGC</span> = contenido generado por usuarios.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Fase 1: Operación</strong> — Contratación de Diseñador/Community Manager
+                    <ul>
+                        <li>Unknown Shopper dirige estrategia, calendario y reporting.</li>
+                        <li>Diseñador/CM ejecuta: diseño/adaptación de piezas, publicación y moderación.</li>
+                        <li>Atención al cliente por DM y comentarios.</li>
+                        <li>Automatizaciones activas; sucursales colaboran con UGC para curaduría y repost.</li>
+                        <li>Hacer más con menos: plantillas, bancos de copies y reutilización multi-formato.</li>
+                        
+                    </ul>
+                </li>
+
+                <li><strong>KPIs y SLAs mínimos</strong>
+                    <ul>
+                        <li>Publicaciones por semana y cumplimiento de calendario.</li>
+                        <li>Tiempo de respuesta en DM/comentarios ≤ 2 h hábiles.</li>
+                        <li>Engagement rate y alcance por formato.</li>
+                        <li>Clics al e-commerce con UTMs y ventas atribuibles básicas.</li>
+                        <li class="small">Notas: <span class="note">KPI</span> = indicadores clave de desempeño; <br><span class="note">DM</span> = mensajes directos; <span class="note">UTM</span> = etiquetas de seguimiento para atribución.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Roadmap</strong>
+                    <ul>
+                        <li><strong>Desarrollo</strong> (semana 1–2) → <strong>Presupuesto</strong> (aprobación) → <strong>Fase 1 Operación</strong> (con Diseñador/CM).</li>
+                    </ul>
+                </li>
+            </ul>
+            
+            <p></p>
+        </div>
+        
+    </div>
+    <footer class="section small footer">
+      <div class="footer-grid">
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><a href="aviso.html">Aviso de Privacidad</a></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>the@unknownshoppers.com</span>
+        <span>&nbsp;</span>
+        <span>The Unknown Shopper © 2025</span>
+      </div>
+    </footer>
+    <script>
+      (function(){
+        var nav = document.getElementById('topnav');
+        var btn = document.getElementById('navToggle');
+        if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+      })();
+    </script>
+</body>
+</html>

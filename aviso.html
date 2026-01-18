@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aviso de Privacidad y Confidencialidad</title>
+  <style>
+    :root { --maxw: 980px; --space: 8px; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: #1C69D4; }
+    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .logo { height: 36px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 24px; letter-spacing: .2px; color: #fff;}
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 18px; }
+    h3 { margin: calc(var(--space) * 2) 0 calc(var(--space) * 1); font-size: 16px; }
+    .meta { color: #4a4a4a; font-size: 14px; }
+    .section { padding: calc(var(--space) * 2) 0; border-top: 1px solid #f2f2f2; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .small { font-size: 13px; color: #666; }
+    .box { border: 1px solid #e6e6e6; border-radius: 8px; padding: 14px 16px; background: #fff; }
+    .note { color: #666; font-size: 12px; }
+    a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    a:hover { text-decoration-thickness: 2px; }
+    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .navbar .brand { display: flex; align-items: center; gap: 10px; }
+    .navbar .brand img { height: 28px; width: auto; }
+    .navbar .links { display: flex; gap: 16px; align-items: center; }
+    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+    @media (max-width: 720px) {
+      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
+      .navbar .links a { padding: 6px 4px; }
+      .navbar.open .links { display: flex; }
+      .navbar .toggle { display: inline-block; }
+    }
+    .footer { padding-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media print { .wrap { padding: 0 12px; } header { border: 0; } .box { break-inside: avoid; } a { text-decoration: none; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar" id="topnav">
+    <div class="inner">
+      <div class="brand">
+        <img src="tus.png" alt="The Unknown Shopper" />
+      </div>
+      <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
+      <div class="links">
+        <a href="estructura.html">Estructura</a>
+        <a href="briefemp.html">Brief</a>
+        <a href="sla.html">SLA</a>
+        <a href="aviso.html" class="active">Aviso</a>
+      </div>
+    </div>
+  </nav>
+  <div class="wrap">
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png" alt="Dermo Cutánea" class="logo" />
+          <h1>Aviso de Privacidad y Confidencialidad</h1>
+        </div>
+       
+      </div>
+    </header>
+
+    <div class="section">
+      <h2>1. Identificación de las partes</h2>
+      <p><strong>El Proveedor:</strong> The Unknown Shopper (en lo sucesivo, “TUS”), con domicilio: [Domicilio del Proveedor], RFC: [RFC Proveedor], correo de contacto: <a href="mailto:the@unknownshoppers.com">the@unknownshoppers.com</a>.</p>
+      <p><strong>El Cliente:</strong> Farmacia Dermo Cutánea (en lo sucesivo, “FDC”), con domicilio: [Domicilio del Cliente], RFC: [RFC Cliente], correo de contacto: [correo@cliente.com].</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Objeto</h2>
+      <p>Regular el tratamiento de datos personales y la confidencialidad de la información intercambiada entre TUS y FDC con motivo de la prestación de servicios de consultoría/gestión de redes sociales, campañas y atención al cliente, conforme a la normativa aplicable en materia de protección de datos.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. Datos personales tratados</h2>
+      <ul>
+        <li>Identificativos: nombre, teléfono, correo, usuario en redes.</li>
+        <li>Transaccionales: historial de interacción, pedidos o tickets asociados.</li>
+        <li>Contenido generado por el usuario (UGC) y mensajes directos (DM) relevantes para la atención.</li>
+        <li>Metadatos y etiquetas de atribución (UTM) para análisis de tráfico y campañas.</li>
+      </ul>
+      <p class="small">No se solicitan datos sensibles de salud; cualquier referencia clínica será tratada con criterios de mínima necesidad y anonimización cuando aplique.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. Finalidades del tratamiento</h2>
+      <ul>
+        <li>Atender comentarios y mensajes en redes sociales y canales relacionados.</li>
+        <li>Ejecutar y medir campañas, promociones y programas de lealtad.</li>
+        <li>Generar reportes de desempeño (KPIs) y mejora continua.</li>
+        <li>Gestionar incidencias operativas y solicitudes derivadas.</li>
+      </ul>
+      <p><strong>Base de legitimación:</strong> interés legítimo del Cliente en la atención y promoción; consentimiento del titular cuando sea requerido por la ley aplicable.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. Responsabilidades y roles</h2>
+      <ul>
+        <li><strong>FDC (Responsable del tratamiento):</strong> define finalidades y provee acceso a canales y datos necesarios.</li>
+        <li><strong>TUS (Encargado del tratamiento):</strong> procesa datos por cuenta de FDC conforme a instrucciones documentadas.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Medidas de seguridad</h2>
+      <ul>
+        <li>Control de accesos (cuentas nominales, doble factor donde sea posible).</li>
+        <li>Política de contraseñas robustas y rotación periódica.</li>
+        <li>Uso de canales oficiales del Cliente (Business Manager, cuentas verificadas).</li>
+        <li>Registro y revisión de actividades relevantes (logs y reportes).</li>
+        <li>Minimización y anonimización de datos cuando aplique.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>7. Confidencialidad (NDA)</h2>
+      <div class="box">
+        <p>Toda información no pública compartida entre las partes (estrategias, listas de clientes, precios, materiales creativos, reportes, accesos, incidencias y cualquier documentación técnica o comercial) es <strong>confidencial</strong> y será utilizada exclusivamente para la prestación de los servicios.</p>
+        <ul>
+          <li>No divulgación a terceros sin autorización previa y por escrito de la otra parte.</li>
+          <li>Obligación de notificar incidentes de seguridad o acceso no autorizado.</li>
+          <li>Devolución o destrucción segura de información confidencial al terminar la relación.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>8. Transferencias y encargados subcontratados</h2>
+      <p>En su caso, TUS podrá involucrar subencargados (p. ej., herramientas de gestión/analítica) garantizando condiciones equivalentes de protección y confidencialidad. Cualquier transferencia internacional se realizará conforme a la normativa aplicable y, de ser necesario, con cláusulas contractuales adecuadas.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. Conservación de datos</h2>
+      <p>Los datos se conservarán durante la vigencia de la relación contractual y por los plazos necesarios para el cumplimiento de obligaciones legales o defensa de reclamaciones. Transcurridos dichos plazos, se procederá a su supresión o anonimización.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. Derechos de los titulares (ARCO)</h2>
+      <p>Los titulares podrán ejercer sus derechos de acceso, rectificación, cancelación y oposición (ARCO), así como revocar su consentimiento cuando proceda, mediante solicitud a FDC y/o al correo de contacto del Responsable indicado. TUS apoyará a FDC en la atención de estas solicitudes en su calidad de Encargado.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Contacto</h2>
+      <ul>
+        <li><strong>FDC – Responsable:</strong> [Nombre], [Correo], [Teléfono], [Domicilio].</li>
+        <li><strong>TUS – Encargado:</strong> The Unknown Shopper, <a href="mailto:the@unknownshoppers.com">the@unknownshoppers.com</a>, [Domicilio del Proveedor].</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>12. Vigencia, jurisdicción y cambios</h2>
+      <ul>
+        <li><strong>Vigencia:</strong> a partir de su publicación y durante la relación contractual.</li>
+        <li><strong>Jurisdicción aplicable:</strong> [Ciudad/Estado], salvo pacto distinto por escrito.</li>
+        <li><strong>Modificaciones:</strong> cualquier cambio será comunicado por los canales oficiales y tendrá efectos desde su publicación.</li>
+      </ul>
+    </div>
+
+
+    <footer class="section small footer">
+      <div class="footer-grid">
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+        <img src="tus.png" alt="The Unknown Shopper" class="logo" style="width: 100px;">
+       
+        <div class="col">
+          <ul>
+            <li>&nbsp;</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>the@unknownshoppers.com</span>
+        <span>&nbsp;</span>
+        <span>The Unknown Shopper © 2025</span>
+      </div>
+    </footer>
+  </div>
+  <script>
+    (function(){
+      var nav = document.getElementById('topnav');
+      var btn = document.getElementById('navToggle');
+      if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+    })();
+  </script>
+</body>
+</html>
