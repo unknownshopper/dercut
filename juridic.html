@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lineamientos COFEPRIS para Redes · Dermo Cutánea</title>
+  <style>
+    :root { --maxw: 980px; --space: 8px; --bmw: #1C69D4; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+
+    /* Navbar */
+    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .navbar .brand { display: flex; align-items: center; gap: 10px; }
+    .navbar .brand img { height: 28px; width: auto; }
+    .navbar .links { display: flex; gap: 16px; align-items: center; }
+    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+    @media (max-width: 720px) {
+      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 200px; }
+      .navbar .links a { padding: 6px 4px; }
+      .navbar.open .links { display: flex; }
+      .navbar .toggle { display: inline-block; }
+    }
+
+    /* Header */
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: var(--bmw); }
+    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
+    .title .brand { display: flex; align-items: center; gap: 10px; }
+    .title .brand .logo { height: 40px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right; }
+    .meta { color: #fff; font-size: 14px; flex: 1 1 100%; text-align: center; }
+
+    /* Content */
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .muted { color: #666; font-size: 13px; }
+    .tag { display: inline-block; padding: 2px 8px; font-size: 12px; border-radius: 999px; background: #f1f5ff; color: #1C69D4; border: 1px solid #dbe6ff; }
+
+    /* Footer */
+    .footer { padding-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Print */
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { margin: 0; }
+      .wrap { width: 210mm; padding: 10mm; max-width: none; margin: 0 auto; }
+      header { display: none !important; }
+      .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
+      .print-header .left { display: flex; align-items: center; gap: 8px; }
+      .print-header .right { text-align: right; }
+      .print-header .logo { height: 14mm; width: auto; }
+      .print-header h1 { margin: 0; font-size: 18px; color: #111; }
+      .print-header .sub { font-size: 12px; color: #555; }
+      .footer { width: 210mm; padding: 0 10mm; margin: 0 auto; }
+      .actions, .navbar { display: none !important; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+    }
+
+    .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
+    .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .btn:hover { filter: brightness(0.97); }
+  </style>
+</head>
+<body>
+  
+
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header" style="display:none">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Lineamientos para Redes (COFEPRIS)</h1>
+        <div class="sub">Dermo Cutánea · Tabasco · Veracruz · Chiapas · Campeche · Yucatán · Quintana Roo</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+          <h1>Lineamientos para Redes (COFEPRIS)</h1>
+        </div>
+        <div class="meta">Dermo Cutánea · Tabasco · Veracruz · Chiapas · Campeche · Yucatán · Quintana Roo</div>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">Descargar PDF</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Resumen ejecutivo</h2>
+      <p>En México, la publicidad de productos para la salud está regulada por COFEPRIS. <strong>Vender</strong> y <strong>publicitar</strong> son permisos distintos. En redes sociales <em>sí puedes publicar</em> dermocosméticos y accesorios con comunicación cosmética; <em>no</em> puedes publicitar medicamentos sin autorización de publicidad.</p>
+      <p class="muted">Este documento es informativo y no constituye asesoría legal. Para campañas con medicamentos, se requiere revisión y autorización de publicidad por COFEPRIS.</p>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2><span class="tag">Permitido</span> Comunicación en redes</h2>
+        <ul>
+          <li>Dermocosméticos y productos de cuidado personal (p. ej., Avène, ISDIN, CeraVe, La Roche‑Posay, Eucerin, Bioderma).</li>
+          <li>Accesorios no médicos (cepillos faciales, esponjas, rodillos sin claims médicos).</li>
+          <li>Contenidos educativos generales, rutinas de skincare, texturas, ingredientes y modo de uso.</li>
+          <li>Frases cosméticas: “Ayuda a hidratar”, “Apoya la rutina”, “Ideal para piel sensible”, “Uso cosmético”.</li>
+          <li>Descargos: “Consulta a tu dermatólogo”.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2><span class="tag" style="background:#fff3f3;color:#b30000;border-color:#ffdede;">Restringido</span> No permitido sin autorización</h2>
+        <ul>
+          <li>Medicamentos (con o sin receta), antibióticos tópicos, corticoides, retinoides de uso médico.</li>
+          <li>Claims médicos: “cura”, “trata”, “elimina”, “previene enfermedades”, “resultados clínicos garantizados”.</li>
+          <li>Diagnóstico, indicación terapéutica, promesas de eficacia clínica, sustitución de consulta médica.</li>
+          <li>Antes/después que impliquen resultados médicos o terapéuticos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Cómo redactar copys seguros</h2>
+        <ul>
+          <li>Enfoca beneficios cosméticos y experiencia de uso (apariencia, hidratación, confort).</li>
+          <li>Menciona ingredientes y su función cosmética (p. ej., ácido hialurónico: retiene humedad).</li>
+          <li>Evita lenguaje de tratamiento o curación. Sustituye “cura el acné” por “ayuda en rutinas para piel con tendencia acneica”.</li>
+          <li>Incluye descargo breve: “Este producto no sustituye tratamiento médico”.</li>
+          <li>Si un producto de una marca tiene versión médica, verifica el SKU exacto antes de publicarlo.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Checklist previo a publicar</h2>
+        <ul>
+          <li>SKU clasificado como <strong>cosmético/dermocosmético</strong> y no medicamento.</li>
+          <li>Sin claims médicos o terapéuticos; solo beneficios cosméticos.</li>
+          <li>Imágenes sin promesas clínicas; evitar bata/estetoscopio si sugiere acto médico.</li>
+          <li>Si hay enlaces a e‑commerce, que la ficha también evite claims médicos.</li>
+          <li>Ante dudas, consulta lista de control interna o solicita revisión.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Marcas con doble portafolio (atención)</h2>
+      <p>Algunas marcas de tu catálogo también manejan medicamentos (p. ej., Galderma, Glenmark, Valeant, Panalab, Megalabs, Obagi, DSD). <strong>No es la marca</strong> lo que determina si puede publicitarse, sino el producto específico. Verifica el registro/sufijo del producto antes de publicarlo.</p>
+    </section>
+
+    <section class="card">
+      <h2>Flujo recomendado de revisión</h2>
+      <ul>
+        <li>Clasificación del SKU (cosmético vs. medicamento).</li>
+        <li>Redacción del copy con plantilla segura y descargo estándar.</li>
+        <li>Checklist visual (imágenes/antes-después/elementos médicos).</li>
+        <li>Visto bueno interno (Unknown Shopper) y publicación.</li>
+        <li>Para medicamentos: detener y solicitar orientación regulatoria y autorización de publicidad.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Descargos sugeridos</h2>
+      <ul>
+        <li>“Este contenido es informativo y no sustituye la consulta dermatológica.”</li>
+        <li>“Uso cosmético. Los resultados pueden variar.”</li>
+        <li>“Consulta a tu dermatólogo en caso de duda o condición específica de la piel.”</li>
+      </ul>
+      <p class="muted">Nota: la inclusión de descargos no habilita claims médicos ni suple permisos requeridos para publicidad de medicamentos.</p>
+    </section>
+
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="aviso.html">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2025</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav = document.getElementById('topnav');
+      var btn = document.getElementById('navToggle');
+      if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+    })();
+  </script>
+</body>
+</html>
