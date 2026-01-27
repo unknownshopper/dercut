@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reporte de Auditoría · Dermo Cutánea</title>
+  <meta name="description" content="Auditoría inicial de e‑commerce y redes: estado actual, inactividad, prioridades y roadmap 30‑60‑90 con foco en canales de distribución." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Reporte de Auditoría · Dermo Cutánea" />
+  <meta property="og:description" content="Hallazgos por canal, riesgos y oportunidades, distribución, KPIs y plan 30‑60‑90." />
+  <meta property="og:image" content="tus.png?v=1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="The Unknown Shopper" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Reporte de Auditoría · Dermo Cutánea" />
+  <meta name="twitter:description" content="Hallazgos por canal, riesgos y oportunidades, distribución, KPIs y plan 30‑60‑90." />
+  <meta name="twitter:image" content="tus.png?v=1" />
+  <link rel="icon" type="image/png" href="tus.png?v=1" />
+  <style>
+    :root { --maxw: 980px; --space: 8px; --bmw: #1C69D4; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+
+    /* Navbar */
+    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
+    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .navbar .brand { display: flex; align-items: center; gap: 10px; }
+    .navbar .brand img { height: 28px; width: auto; }
+    .navbar .links { display: flex; gap: 16px; align-items: center; }
+    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
+    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
+    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
+    @media (max-width: 720px) {
+      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 200px; }
+      .navbar .links a { padding: 6px 4px; }
+      .navbar.open .links { display: flex; }
+      .navbar .toggle { display: inline-block; }
+    }
+
+    /* Header */
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: var(--bmw); }
+    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
+    .title .brand { display: flex; align-items: center; gap: 10px; }
+    .title .brand .logo { height: 40px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right; }
+    .meta { color: #fff; font-size: 14px; flex: 1 1 100%; text-align: center; }
+
+    /* Content */
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 900px) { .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+    .muted { color: #666; font-size: 13px; }
+    .kpi { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+    .kpi .item { border: 1px solid #e6e6e6; border-radius: 8px; padding: 10px 12px; background: #fafafa; }
+    .tag { display: inline-block; padding: 2px 8px; font-size: 12px; border-radius: 999px; background: #f1f5ff; color: #1C69D4; border: 1px solid #dbe6ff; }
+
+    /* Footer */
+    .footer { padding-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    /* Print */
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { margin: 0; }
+      .wrap { width: 210mm; padding: 10mm; max-width: none; margin: 0 auto; }
+      header { display: none !important; }
+      .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
+      .print-header .left { display: flex; align-items: center; gap: 8px; }
+      .print-header .right { text-align: right; }
+      .print-header .logo { height: 14mm; width: auto; }
+      .print-header h1 { margin: 0; font-size: 18px; color: #111; }
+      .print-header .sub { font-size: 12px; color: #555; }
+      .footer { width: 210mm; padding: 0 10mm; margin: 0 auto; }
+      .actions, .navbar { display: none !important; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+    }
+
+    .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
+    .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .btn:hover { filter: brightness(0.97); }
+  </style>
+</head>
+<body>
+  
+
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header" style="display:none">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Reporte de Auditoría</h1>
+        <div class="sub">E‑commerce y Redes · Tabasco · Veracruz · Chiapas · Campeche · Yucatán · Quintana Roo</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+          <h1>Reporte de Auditoría</h1>
+        </div>
+        <div class="meta">E‑commerce y Redes · Tabasco · Veracruz · Chiapas · Campeche · Yucatán · Quintana Roo</div>
+      </div>
+      <div class="actions">
+        <button class="btn" onclick="window.print()">Descargar PDF</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Ficha rápida</h2>
+      <ul>
+        <li><strong>Facebook:</strong> <a href="https://www.facebook.com/dermocutanea" target="_blank" rel="noopener">/dermocutanea</a></li>
+        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/dermocutanea/" target="_blank" rel="noopener">@dermocutanea</a></li>
+        <li><strong>TikTok:</strong> <a href="https://www.tiktok.com/@dermocutanea" target="_blank" rel="noopener">@dermocutanea</a></li>
+        <li><strong>Sitio:</strong> <a href="https://dermocutanea.com" target="_blank" rel="noopener">dermocutanea.com</a></li>
+        <li><strong>WhatsApp:</strong> <a href="https://wa.me/529932700317" target="_blank" rel="noopener">+52 1 993 270 0317</a></li>
+        <li><strong>Email:</strong> <a href="mailto:dermostrada@dermocutanea.com">dermostrada@dermocutanea.com</a></li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Sucursales y redes por estado</h2>
+      <p class="muted">Nota: los números indicados corresponden a <strong>seguidores</strong> en Facebook.</p>
+      <div class="grid two">
+        <div>
+          <h3>Yucatán</h3>
+          <ul>
+            <li><strong>ALTABRISAMID</strong> — 339 · <a href="https://www.facebook.com/Dermoaltabrisa" target="_blank" rel="noopener">facebook.com/Dermoaltabrisa</a></li>
+            <li><strong>San Ramón</strong> — 36 · <a href="https://www.facebook.com/profile.php?id=61577310801037" target="_blank" rel="noopener">perfil</a></li>
+            <li><strong>Yucatán</strong> — 183 · <a href="https://www.facebook.com/profile.php?id=100095377595967" target="_blank" rel="noopener">perfil</a></li>
+          </ul>
+
+          <h3>Tabasco</h3>
+          <ul>
+            <li><strong>Moret</strong> — 292 · <a href="https://www.facebook.com/dermomorett" target="_blank" rel="noopener">facebook.com/dermomorett</a></li>
+            <li><strong>TAB2000</strong> — 137 · <a href="https://www.facebook.com/dermotab200" target="_blank" rel="noopener">facebook.com/dermotab200</a></li>
+            <li><strong>Brown</strong> — 126 · <a href="https://www.facebook.com/Dermobrown" target="_blank" rel="noopener">facebook.com/Dermobrown</a></li>
+            <li><strong>Dermapiel</strong> — 6 · <a href="https://www.facebook.com/dermocutanea.dermpiel" target="_blank" rel="noopener">facebook.com/dermocutanea.dermpiel</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Chiapas</h3>
+          <ul>
+            <li><strong>Tuxtla Sta.</strong> — 604 · <a href="https://www.facebook.com/Dermotuxtlastaelena" target="_blank" rel="noopener">facebook.com/Dermotuxtlastaelena</a></li>
+            <li><strong>Tuxtla Diana</strong> — 175 · <a href="https://www.facebook.com/Dermotuxtlaladiana" target="_blank" rel="noopener">facebook.com/Dermotuxtlaladiana</a></li>
+          </ul>
+
+          <h3>Campeche</h3>
+          <ul>
+            <li><strong>Campeche</strong> — 1000 · <a href="https://www.facebook.com/Dermocampeche" target="_blank" rel="noopener">facebook.com/Dermocampeche</a></li>
+            <li><strong>Campeche </strong> — 417 · <a href="https://www.facebook.com/dermocutaneacampeche" target="_blank" rel="noopener">facebook.com/dermocutaneacampeche</a></li>
+          </ul>
+
+          <h3>Veracruz</h3>
+          <ul>
+            <li><strong>Coatza</strong> — 411 · <a href="https://www.facebook.com/profile.php?id=61566430172296" target="_blank" rel="noopener">perfil</a></li>
+            <li><strong>Coatza</strong> — 172 · <a href="https://www.facebook.com/Dermocoatza" target="_blank" rel="noopener">facebook.com/Dermocoatza</a></li>
+            <li><strong>Veracruz BO</strong> — 237 · <a href="https://www.facebook.com/Dermoveracruz" target="_blank" rel="noopener">facebook.com/Dermoveracruz</a></li>
+            <li><strong>Veracruz</strong> — 106 · <a href="https://www.facebook.com/profile.php?id=100076347245013" target="_blank" rel="noopener">perfil</a></li>
+          </ul>
+
+          <h3>Quintana Roo</h3>
+          <ul>
+            <li><strong>Cancún BON</strong> — 237 · <a href="https://www.facebook.com/profile.php?id=100089985130251" target="_blank" rel="noopener">perfil</a></li>
+            <li><strong>Cancún PAB</strong> — 118 · <a href="https://www.facebook.com/profile.php?id=100072245722904" target="_blank" rel="noopener">perfil</a></li>
+            <li><strong>Cancún PAB</strong> — 154 · <a href="https://www.facebook.com/dermocancun" target="_blank" rel="noopener">facebook.com/dermocancun</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Contexto y objetivo</h2>
+      <p>Partimos de una situación de <strong>inactividad</strong> o baja frecuencia tanto en <strong>redes sociales</strong> como en el <strong>e‑commerce</strong>. El objetivo del presente documento es establecer el punto de partida, los riesgos de mantener la inactividad, y las acciones prioritarias para activar tráfico y ventas con énfasis en <strong>canales de distribución</strong> (propios, pagados, ganados y físicos).</p>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Hallazgos por canal — E‑commerce</h2>
+        <ul>
+          <li>Indexación básica y metadatos por revisar (SEO on‑page, OG/Twitter cards, sitemap/robots).</li>
+          <li>Fichas con enfoque cosmético; evitar claims médicos. Unificar UTMs y eventos (GA4 / Meta CAPI).</li>
+          <li>Checkout y métodos de pago: verificar fricciones, tiempos y políticas visibles.</li>
+          <li>Velocidad móvil y core web vitals por optimizar.</li>
+          <li>Etiquetado de catálogo para campañas (feeds actualizados, categorías por estado/linea).</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Hallazgos por canal — Redes</h2>
+        <ul>
+          <li>Facebook/Instagram: baja frecuencia y formatos repetitivos; falta de calendario por estado.</li>
+          <li>Mensajería no estandarizada; SLAs no definidos en DM/comentarios.</li>
+          <li>UGC desaprovechado (tiendas y clientes) y ausencia de banco de assets.</li>
+          <li>TikTok: pendiente de apertura y lineamientos de contenido vertical.</li>
+          <li>Bio/links sin rastro de UTMs; oportunidad de tráfico al e‑commerce.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Riesgos de inactividad</h2>
+        <ul>
+          <li>Pérdida de alcance orgánico y deterioro algorítmico por baja frecuencia.</li>
+          <li>Caída de tráfico al e‑commerce y menor señal de conversión para campañas.</li>
+          <li>Competencia ocupa share of voice y posiciona categorías.</li>
+          <li>Desalineación entre tiendas físicas y comunicación digital.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Oportunidades inmediatas</h2>
+        <ul>
+          <li>Quick wins SEO (metas, OG, estructura de encabezados, enlaces internos).</li>
+          <li>Calendario 30 días con plantillas multi‑formato por estado y categorías clave.</li>
+          <li>Activar UTMs y medición básica por canal para atribución de ventas.</li>
+          <li>Mensajería con SLAs y respuestas rápidas; guiones por escenario.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Canales de distribución (enfoque)</h2>
+      <div class="grid two">
+        <div>
+          <p><span class="tag">Propios</span> Sitio web/e‑commerce, email/SMS, WhatsApp Business, base de clientes.</p>
+          <p><span class="tag">Pagados</span> Meta, Google, TikTok (prospecting/remarketing) con UTMs y catálogos.</p>
+          <p><span class="tag">Ganados</span> UGC de sucursales y clientes, reseñas, comunidad.</p>
+          <p><span class="tag">Físicos</span> Tiendas por estado: activaciones locales, QR a e‑commerce y códigos por sucursal.</p>
+        </div>
+        <div>
+          <ul>
+            <li>Unificar narrativa por estado y categoría (piel sensible, fotoprotección, anti‑edad, etc.).</li>
+            <li>Contenido educativo sin claims médicos; énfasis en uso cosmético.</li>
+            <li>Rutas de tráfico claras hacia e‑commerce con UTMs por red/estado.</li>
+            <li>Promos y bundles coordinados entre tiendas físicas y online.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Roadmap 30‑60‑90</h2>
+      <div class="grid two">
+        <div>
+          <h3>30 días (activación)</h3>
+          <ul>
+            <li>Auditoría rápida técnica (SEO/analytics/pixels) y alta de TikTok.</li>
+            <li>Calendario piloto por estado (frecuencia y formatos) + banco de assets.</li>
+            <li>UTMs estándar, GA4 y CAPI; tableros de medición base.</li>
+            <li>SLAs de mensajería y respuestas rápidas.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>60‑90 días (escala)</h3>
+          <ul>
+            <li>Optimización de pauta (catalog sales, advantage+ shopping, remarketing).</li>
+            <li>Pruebas A/B de creatividades por estado/categoría.</li>
+            <li>SEO on‑page continuo y contenido evergreen.</li>
+            <li>Integración de sucursales (UGC y QR a e‑commerce) y bundles por temporada.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>KPIs iniciales y metas</h2>
+      <div class="kpi">
+        <div class="item"><strong>Frecuencia por red</strong><br><span class="muted">3‑5/semana IG/FB · 3‑4/semana TikTok</span></div>
+        <div class="item"><strong>Engagement</strong><br><span class="muted">Mejora progresiva por formato</span></div>
+        <div class="item"><strong>Tráfico a e‑commerce</strong><br><span class="muted">UTMs por estado y red</span></div>
+        <div class="item"><strong>Conversiones básicas</strong><br><span class="muted">Clic‑to‑cart / checkout / compra</span></div>
+        <div class="item"><strong>Tiempo de respuesta</strong><br><span class="muted">≤ 2 h hábiles en DM/comentarios</span></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Requerimientos</h2>
+      <ul>
+        <li>Accesos: e‑commerce, GA4, Meta/Business Manager, TikTok Ads, Google Ads.</li>
+        <li>Catálogo actualizado (feed) y lineamientos de marca.</li>
+        <li>Inventario de tiendas por estado y responsables locales para UGC.</li>
+        <li>Definición de promos/temporadas y políticas de envíos/devoluciones visibles.</li>
+      </ul>
+      <p class="muted">Descargos: este documento es informativo, no médico. Los contenidos propuestos evitarán claims terapéuticos; para medicamentos se requiere autorización de publicidad COFEPRIS.</p>
+    </section>
+
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li><a href="aviso.html">Aviso de Privacidad</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <ul>
+          <li>&nbsp;</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2026</span>
+    </div>
+  </footer>
+
+  <script>
+    (function(){
+      var nav = document.getElementById('topnav');
+      var btn = document.getElementById('navToggle');
+      if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
+    })();
+  </script>
+</body>
+</html>
