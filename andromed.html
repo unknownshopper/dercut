@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andrómeda · Marco de Campañas (Meta)</title>
+  <meta name="description" content="Guía ejecutiva para operar campañas en Meta con Andrómeda: principios, requisitos, diseño de campañas, buenas prácticas y ejemplos creativos." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Andrómeda · Marco de Campañas (Meta)" />
+  <meta property="og:description" content="Principios de IA en segmentación, diversidad creativa, setup operativo, métricas y checklist de lanzamiento." />
+  <meta property="og:image" content="tus.png?v=1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="The Unknown Shopper" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Andrómeda · Marco de Campañas (Meta)" />
+  <meta name="twitter:description" content="Principios de IA en segmentación, diversidad creativa, setup operativo, métricas y checklist de lanzamiento." />
+  <meta name="twitter:image" content="tus.png?v=1" />
+  <link rel="icon" type="image/png" href="tus.png?v=1" />
+  <style>
+    :root { --maxw: 980px; --space: 8px; --bmw: #1C69D4; }
+    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+    *, *:before, *:after { box-sizing: inherit; }
+    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
+    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
+    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: var(--bmw); }
+    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
+    .title .brand { display: flex; align-items: center; gap: 10px; }
+    .title .brand .logo { height: 40px; width: auto; display: block; }
+    h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right; }
+    .meta { color: #fff; font-size: 14px; flex: 1 1 100%; text-align: center; }
+    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
+    p { margin: 0 0 calc(var(--space) * 2); }
+    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
+    li { margin: calc(var(--space) * 1) 0; }
+    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
+    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+    @media (min-width: 900px) { .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .muted { color: #666; font-size: 13px; }
+    .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
+    .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    .btn:hover { filter: brightness(0.97); }
+    .footer { padding-top: calc(var(--space) * 2); margin-top: calc(var(--space) * 2); }
+    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
+    .footer .col ul { list-style: none; margin: 0; padding: 0; }
+    .footer .col li { margin: 2px 0; }
+    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
+    .footer a:hover { border-bottom-color: #000; }
+    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
+    /* Print */
+    @page { size: A4; margin: 0; }
+    @media print {
+      html, body { margin: 0; }
+      .wrap { width: calc(210mm - 20mm); padding: 10mm; max-width: none; margin: 0 auto; }
+      header { display: none !important; }
+      .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
+      .print-header .left { display: flex; align-items: center; gap: 8px; }
+      .print-header .right { text-align: right; }
+      .print-header .logo { height: 14mm; width: auto; }
+      .print-header h1 { margin: 0; font-size: 18px; color: #111; }
+      .print-header .sub { font-size: 12px; color: #555; }
+      .footer { width: calc(210mm - 20mm); padding: 0 10mm; margin: 0 auto; }
+      .actions { display: none !important; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header" style="display:none">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Andrómeda · Marco de Campañas (Meta)</h1>
+        <div class="sub">IA + Creatividad · Pauta con catálogo · Medición y aprendizaje</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+          <h1>Andrómeda · Marco de Campañas (Meta)</h1>
+        </div>
+        <div class="meta">IA + Creatividad · Pauta con catálogo · Medición y aprendizaje</div>
+      </div>
+      <div class="actions">
+        <button class="btn" data-action="print">Descargar PDF</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Principios clave</h2>
+      <ul>
+        <li><strong>Segmentación guiada por IA:</strong> menos intereses manuales; la audiencia emerge del contenido y señales de conversión.</li>
+        <li><strong>Diversidad creativa real:</strong> múltiples ángulos, formatos, voces (UGC/creadores) para explorar “alma gemela”.</li>
+        <li><strong>Ventana de aprendizaje:</strong> evaluar en periodos de ~7 días sin cambios disruptivos (budget/targets/creatives masivos).</li>
+        <li><strong>Señal y calidad:</strong> GA4 + Pixel/CAPI, eventos correctos, feed limpio y páginas veloces (móvil).</li>
+      </ul>
+      <p class="muted">Resultados reportados por Meta: +6% en recuperación del sistema y +8% en calidad de anuncios en segmentos evaluados.</p>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Requisitos operativos</h2>
+        <ul>
+          <li>GA4 + Pixel + CAPI activos y validados (view_item, add_to_cart, begin_checkout, purchase).</li>
+          <li>Catálogo/feeds actualizados y mapeo de categorías; enlaces con UTMs.</li>
+          <li>Link in bio por red; UTMs por estado/sucursal.</li>
+          <li>Banco de assets (UGC, producto, tutoriales) por estado/categoría.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h2>Diseño de campañas (recomendado)</h2>
+        <ul>
+          <li><strong>Meta Sales con catálogo</strong> (Advantage+ Shopping) + remarketing dinámico 7–14 días.</li>
+          <li><strong>TikTok Conversion</strong> con creatividades verticales cortas; retargeting viewers/clickers.</li>
+          <li><strong>Google</strong> brand + PMax para captura de demanda.</li>
+          <li>Capas creativas por estado/categoría; presupuestos según ROAS.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Buenas prácticas para entrenamiento</h2>
+      <ul>
+        <li>Evitar cambios que reseteen learning (no mover presupuesto >20%/día, no pausar/activar masivo).</li>
+        <li>Rotación de creatividades por señales (CTR, CVR, coste por add_to_cart/purchase).</li>
+        <li>Test A/B continuos: formato, apertura, CTA, creador, “razón para creer”.</li>
+        <li>Coherencia entre ad y landing; velocidad móvil optimizada.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Ejemplos de briefs creativos (ángulos)</h2>
+      <div class="grid two">
+        <div>
+          <ul>
+            <li><strong>Rutina piel sensible (UGC):</strong> “Así uso X para disminuir la sensación de tirantez”.</li>
+            <li><strong>Fotoprotección real:</strong> “Reaplica en 3 pasos, textura ligera, no deja residuo”.</li>
+            <li><strong>Antes/después cosmético:</strong> “Mejora de apariencia tras 4 semanas de uso”.</li>
+            <li><strong>Tienda local:</strong> “Compra en línea y recoge en sucursal de tu estado”.</li>
+          </ul>
+        </div>
+        <div>
+          <ul>
+            <li><strong>Comparativa textura:</strong> gel vs. crema (close-up manos, velocidad 1x/2x).</li>
+            <li><strong>Creadores locales:</strong> testimonios cortos por estado/categoría.</li>
+            <li><strong>Bundle temático:</strong> “Kit fotoprotección para fin de semana”.</li>
+            <li><strong>Oferta segura:</strong> sin claims médicos; énfasis en uso cosmético.</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">Sugerencia: 6–8 variaciones activas por grupo; rotar cada 10–14 días según señales.</p>
+    </section>
+
+    <section class="card">
+      <h2>Métricas y ventanas de evaluación</h2>
+      <ul>
+        <li><strong>Semana 1:</strong> CTR, CPC, add_to_cart; comentarios y señal de engagement.</li>
+        <li><strong>Semana 2:</strong> CVR, CPA, ROAS; aprendizaje casi estabilizado.</li>
+        <li><strong>Continuo:</strong> ROAS/LTV, tasa de repetición, participación por estado/sucursal.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Checklist de lanzamiento</h2>
+      <ul>
+        <li>GA4 + Pixel/CAPI verificados y eventos de compra funcionando.</li>
+        <li>Catálogo con UTMs; landings por estado; link in bio actualizado.</li>
+        <li>6–8 creatividades iniciales por objetivo; variantes UGC/creador.</li>
+        <li>Reglas de pacing (no cambios masivos durante learning); tablero quincenal.</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+      <div class="col"><ul><li><a href="aviso.html">Aviso de Privacidad</a></li></ul></div>
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+

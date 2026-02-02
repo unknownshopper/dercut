@@ -77,7 +77,8 @@
     @page { size: A4; margin: 0; }
     @media print {
       html, body { margin: 0; }
-      .wrap { width: 210mm; padding: 10mm; max-width: none; margin: 0 auto; }
+      /* Ancho imprimible correcto: 210mm menos 20mm de padding total */
+      .wrap { width: calc(210mm - 20mm); padding: 10mm; max-width: none; margin: 0 auto; }
       header { display: none !important; }
       .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
       .print-header .left { display: flex; align-items: center; gap: 8px; }
@@ -85,15 +86,24 @@
       .print-header .logo { height: 14mm; width: auto; }
       .print-header h1 { margin: 0; font-size: 18px; color: #111; }
       .print-header .sub { font-size: 12px; color: #555; }
-      .footer { width: 210mm; padding: 0 10mm; margin: 0 auto; }
+      .footer { width: calc(210mm - 20mm); padding: 0 10mm; margin: 0 auto; }
       .actions, .navbar { display: none !important; }
       body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
       a { text-decoration: none; }
+      /* Estrategia en página nueva con respiro */
+      #estrategia-block { break-before: page; page-break-before: always; padding-top: 12mm; }
+      #acciones-semana, #landings-block { break-before: page; page-break-before: always; padding-top: 12mm; }
     }
 
     .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
     .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
     .btn:hover { filter: brightness(0.97); }
+    /* Simple table */
+    .table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+    .table th, .table td { border: 1px solid #e6e6e6; padding: 8px 10px; font-size: 14px; word-break: break-word; overflow-wrap: anywhere; }
+    .table th { background: #f6f6f6; text-align: left; }
+    /* En pantalla, permitir scroll horizontal si hiciera falta */
+    #landings-block { overflow-x: auto; }
   </style>
 </head>
 <body>
@@ -133,6 +143,90 @@
         <li><strong>Sitio:</strong> <a href="https://dermocutanea.com" target="_blank" rel="noopener">dermocutanea.com</a></li>
         <li><strong>WhatsApp:</strong> <a href="https://wa.me/529932700317" target="_blank" rel="noopener">+52 1 993 270 0317</a></li>
         <li><strong>Email:</strong> <a href="mailto:dermostrada@dermocutanea.com">dermostrada@dermocutanea.com</a></li>
+        <li><strong>IG seguidores:</strong> 5,072</li>
+        <li><strong>FB seguidores (sucursales, total):</strong> 4,750</li>
+      </ul>
+    </section>
+
+    <section class="card" id="acciones-semana">
+      <h2>Acciones Semana 1 (ejecutables)</h2>
+      <ul>
+        <li>Configurar <strong>Store Locations</strong> en Facebook y normalizar NAP por sucursal.</li>
+        <li>Activar <strong>link in bio</strong> en IG/TikTok con UTMs por estado.</li>
+        <li>Implementar <strong>GA4 + Pixel/CAPI</strong> y verificar eventos de comercio.</li>
+        <li>Preparar <strong>feeds/catálogos</strong> (Meta/TikTok) y etiquetas de producto.</li>
+        <li>Definir <strong>SLAs</strong> y guiones de respuesta para DM/comentarios (≤ 2 h hábiles).</li>
+        <li>Generar <strong>QR/códigos</strong> por sucursal apuntando a landings con UTMs.</li>
+      </ul>
+    </section>
+
+    <section class="card" id="landings-block">
+      <h2>Landings por estado + UTMs + QR</h2>
+      <p class="muted">Ejemplo de estructura de destino y parámetros. Ajustaremos dominios finales y campañas específicas.</p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Estado</th>
+            <th>Landing</th>
+            <th>UTM (ejemplo)</th>
+            <th>QR</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tabasco</td>
+            <td>https://dermocutanea.com/landing/tabasco</td>
+            <td>?utm_source=instagram&utm_medium=organic&utm_campaign=tabasco_fotoproteccion&utm_content=suc_tabasco_moret</td>
+            <td>[pendiente]</td>
+          </tr>
+          <tr>
+            <td>Yucatán</td>
+            <td>https://dermocutanea.com/landing/yucatan</td>
+            <td>?utm_source=facebook&utm_medium=qr&utm_campaign=yucatan_pielsensible&utm_content=suc_yucatan_altabrisamid</td>
+            <td>[pendiente]</td>
+          </tr>
+          <tr>
+            <td>Chiapas</td>
+            <td>https://dermocutanea.com/landing/chiapas</td>
+            <td>?utm_source=tiktok&utm_medium=paid&utm_campaign=chiapas_antiage&utm_content=ad_variacionA</td>
+            <td>[pendiente]</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card" id="estrategia-block">
+      <h2>Estrategia para activar e‑commerce con redes</h2>
+      <ul>
+        <li><strong>Objetivo único:</strong> llevar tráfico y conversión a dermocutanea.com; todo contenido y pauta debe apuntar ahí.</li>
+        <li><strong>Consolidación de cuentas:</strong> Facebook principal + Store Locations para sucursales; evitar fanpages paralelas con poco alcance.</li>
+        <li><strong>Contenido:</strong> 60% educativo cosmético, 30% producto/uso, 10% promos; verticales por estado/categoría y UGC de sucursales.</li>
+        <li><strong>Pauta de performance:</strong> catálogos (Meta/TikTok) + remarketing 7–14 días; Google brand + PMax para capturar demanda.</li>
+        <li><strong>Medición:</strong> GA4 + Pixel/CAPI, eventos de e‑commerce y UTMs por red/estado/sucursal; tableros quincenales.</li>
+        <li><strong>Distribución física:</strong> QR y códigos por sucursal hacia landings por estado para atribución cruzada.</li>
+      </ul>
+      <h3>Checklist de migración de páginas (Facebook)</h3>
+      <ul>
+        <li>Habilitar <em>Store Locations</em> en la página principal.</li>
+        <li>Actualizar NAP (nombre, dirección, teléfono) y enlaces a e‑commerce por ubicación.</li>
+        <li>Solicitar fusión/redirección de fanpages duplicadas o de bajo valor (&lt;1,000 seguidores, inactividad).</li>
+        <li>Dejar ubicaciones sin feed propio cuando proceda; centralizar publicaciones en la cuenta principal.</li>
+        <li>Definir responsables por sucursal para UGC y reseñas.</li>
+      </ul>
+      <h3>UTMs (resumen operativo)</h3>
+      <p class="muted">source: facebook/instagram/tiktok/google/whatsapp · medium: organic/paid/qr · campaign: estado_categoria · content: formato o sucursal.</p>
+    </section>
+
+    <section class="card">
+      <h2>Resumen de seguidores por estado (Facebook)</h2>
+      <ul>
+        <li><strong>Yucatán:</strong> 558</li>
+        <li><strong>Tabasco:</strong> 561</li>
+        <li><strong>Chiapas:</strong> 779</li>
+        <li><strong>Campeche:</strong> 1,417</li>
+        <li><strong>Veracruz:</strong> 926</li>
+        <li><strong>Quintana Roo:</strong> 509</li>
+        <li><strong>Total Facebook (sucursales):</strong> 4,750</li>
       </ul>
     </section>
 

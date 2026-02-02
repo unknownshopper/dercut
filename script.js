@@ -30,3 +30,17 @@
     });
   }
 })();
+
+// Print buttons: any element with data-action="print"
+(function(){
+  document.addEventListener('click', function(e){
+    var t = e.target;
+    if(t && t.closest){
+      var btn = t.closest('[data-action="print"]');
+      if(btn){
+        e.preventDefault();
+        window.print();
+      }
+    }
+  });
+})();
