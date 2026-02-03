@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bitácora Operativa · Dermo Cutánea</title>
+  <meta name="description" content="Bitácora de registro/seguimiento para las actividades de chklst y chklst2: estado, responsables y notas." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Bitácora Operativa · Dermo Cutánea" />
+  <meta property="og:description" content="Registro y seguimiento de tareas provenientes del checklist operativo." />
+  <meta property="og:image" content="tus.png?v=1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="The Unknown Shopper" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Bitácora Operativa · Dermo Cutánea" />
+  <meta name="twitter:description" content="Registro y seguimiento de tareas provenientes del checklist operativo." />
+  <meta name="twitter:image" content="tus.png?v=1" />
+  <link rel="icon" type="image/png" href="tus.png?v=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="ops">
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Bitácora Operativa</h1>
+        <div class="sub">Registro y seguimiento de tareas</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+          <h1>Bitácora Operativa</h1>
+        </div>
+        <div class="meta">Origen: chklst.html · chklst2.html</div>
+      </div>
+      <div class="actions">
+        <button class="btn" data-action="print">Descargar PDF</button>
+      </div>
+    </header>
+
+    <section class="card">
+      <h2>Cargar actividades (admin)</h2>
+      <form id="bitacora-form">
+        <div class="grid two">
+          <div>
+            <label>Fecha<br><input type="date" name="fecha" required></label>
+          </div>
+          <div>
+            <label>Origen<br>
+              <select name="origen">
+                <option value="admin" selected>admin</option>
+                <option value="chklst">chklst</option>
+                <option value="chklst2">chklst2</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div class="grid two">
+          <div>
+            <label>Responsable<br>
+              <select name="responsable">
+                <option value="CM">CM</option>
+                <option value="Editor">Editor</option>
+                <option value="OS">OS</option>
+              </select>
+            </label>
+          </div>
+          <div>
+            <label>Estado<br>
+              <select name="estado">
+                <option value="pendiente" selected>pendiente</option>
+                <option value="en curso">en curso</option>
+                <option value="completo">completo</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <div>
+          <label>Actividades (una por línea)<br>
+            <textarea name="tareas" rows="4" placeholder="Ej. Publicar piezas del día
+Validar UTMs y destinos" required></textarea>
+          </label>
+        </div>
+        <div>
+          <label>Notas<br>
+            <input type="text" name="notas" placeholder="Opcional" />
+          </label>
+        </div>
+        <div class="actions" style="margin-top:10px;">
+          <button class="btn" type="submit">Agregar a bitácora</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Resumen rápido</h2>
+      <div class="grid two">
+        <div class="card">
+          <strong>Abiertas</strong>
+          <div class="muted">Tareas en curso o pendientes</div>
+        </div>
+        <div class="card">
+          <strong>Cerradas</strong>
+          <div class="muted">Tareas completadas</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Bitácora (registro)</h2>
+      <div class="actions" style="margin: 6px 0 10px;">
+        <button class="action-btn small" data-view="cards">Vista tarjetas</button>
+        <button class="action-btn small" data-view="table">Vista tabla</button>
+      </div>
+      <div id="log-list" class="log-list" style="display:none;"></div>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Fecha</th>
+            <th>Origen</th>
+            <th>Tarea</th>
+            <th>Estado</th>
+            <th>Responsable</th>
+            <th>Notas</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="bitacora-body">
+          <tr><td colspan="7" class="muted">No hay registros aún. Completa el checklist diario en chklst2 y envíalo a la bitácora.</td></tr>
+        </tbody>
+      </table>
+      <p class="small">Sugerencia: en el futuro, podemos persistir esta tabla (localStorage o backend) y registrar movimientos desde chklst/chklst2 con un botón "Enviar a bitácora".</p>
+    </section>
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+      <div class="col"><ul><li><a href="aviso.html">Aviso de Privacidad</a></li></ul></div>
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    (function(){
+      function fmtDate(d){
+        var dt = new Date(d);
+        var y = dt.getFullYear();
+        var m = String(dt.getMonth()+1).padStart(2,'0');
+        var day = String(dt.getDate()).padStart(2,'0');
+        return y + '-' + m + '-' + day;
+      }
+      function esc(s){ return String(s).replace(/[&<>"']/g, function(c){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;','\'':'&#39;'}[c]); }); }
+      function readList(){ try { return JSON.parse(localStorage.getItem('bitacoraEntries')||'[]'); } catch(_) { return []; } }
+      function writeList(list){ localStorage.setItem('bitacoraEntries', JSON.stringify(list)); }
+      function ensureIds(list){
+        var changed = false;
+        list.forEach(function(e){ if(!e.id){ e.id = 'b_'+Math.random().toString(36).slice(2,10); changed = true; } });
+        if(changed) writeList(list);
+        return list;
+      }
+
+      function renderTable(list){
+        var tbody = document.getElementById('bitacora-body');
+        if(!tbody) return;
+        tbody.innerHTML = '';
+        if(!list.length){
+          tbody.innerHTML = '<tr><td colspan="7" class="muted">No hay registros aún. Completa el checklist diario en chklst2 y envíalo a la bitácora.</td></tr>';
+          return;
+        }
+        list.slice().reverse().forEach(function(e){
+          var date = fmtDate(e.date);
+          var origin = e.origin === 'chklst2' ? '<a href="chklst2.html">chklst2</a>' : esc(e.origin||'');
+          var task = e.tasks && e.tasks.length ? esc(e.tasks[0].label) : '(Checklist diario)';
+          var estado = e.status ? esc(e.status) : '';
+          var resp = esc(e.responsable || '');
+          var notas = esc(e.notas || (e.tasks && e.tasks.length>1 ? ('+' + (e.tasks.length-1) + ' tareas') : ''));
+          var tr = document.createElement('tr');
+          tr.innerHTML = '<td>'+date+'</td><td>'+origin+'</td><td>'+task+'</td><td>'+estado+'</td><td>'+resp+'</td><td>'+notas+'</td>'+
+            '<td><button class="action-btn small" data-act="edit" data-id="'+esc(e.id||'')+'">Editar</button> '+
+            '<button class="action-btn small" data-act="del" data-id="'+esc(e.id||'')+'">Eliminar</button></td>';
+          tbody.appendChild(tr);
+        });
+      }
+
+      function renderCards(list){
+        var wrap = document.getElementById('log-list');
+        if(!wrap) return;
+        wrap.innerHTML = '';
+        if(!list.length){
+          wrap.innerHTML = '<div class="muted">No hay registros aún.</div>';
+          return;
+        }
+        list.slice().reverse().forEach(function(e){
+          var div = document.createElement('div');
+          div.className = 'log-item';
+          var estadoClass = (e.status==='completo')? 'success' : (e.status==='en curso'? 'progress' : 'pending');
+          var title = '<div class="top"><div class="meta"><span class="badge '+estadoClass+'">'+esc(e.status||'')+'</span><span>'+fmtDate(e.date)+'</span><span>'+esc(e.origin||'')+'</span></div><div class="who">'+esc(e.responsable||'')+'</div></div>';
+          var tasks = Array.isArray(e.tasks)? e.tasks : [];
+          var listHtml = tasks.length? ('<ul class="tasks">'+tasks.map(function(t){ return '<li>'+esc(t.time?('['+t.time+'] '):'')+esc(t.label||'')+'</li>'; }).join('')+'</ul>') : '';
+          var notesHtml = e.notas? ('<div class="notes">'+esc(e.notas)+'</div>') : '';
+          var actions = '<div class="actions"><button class="action-btn small" data-act="edit" data-id="'+esc(e.id||'')+'">Editar</button> '+
+                        '<button class="action-btn small" data-act="del" data-id="'+esc(e.id||'')+'">Eliminar</button></div>';
+          div.innerHTML = title + listHtml + notesHtml + actions;
+          wrap.appendChild(div);
+        });
+      }
+
+      function switchView(mode){
+        var cards = document.getElementById('log-list');
+        var table = document.querySelector('table.table');
+        if(!cards || !table) return;
+        if(mode==='cards'){
+          cards.style.display = '';
+          table.style.display = 'none';
+          localStorage.setItem('bitacoraView','cards');
+        } else {
+          cards.style.display = 'none';
+          table.style.display = '';
+          localStorage.setItem('bitacoraView','table');
+        }
+      }
+
+      function bindControls(){
+        document.addEventListener('click', function(e){
+          var t = e.target;
+          if(!t || !t.closest) return;
+          var vBtn = t.closest('[data-view]');
+          if(vBtn){
+            e.preventDefault();
+            var mode = vBtn.getAttribute('data-view');
+            switchView(mode);
+          }
+          var actBtn = t.closest('[data-act]');
+          if(actBtn){
+            e.preventDefault();
+            var id = actBtn.getAttribute('data-id');
+            var act = actBtn.getAttribute('data-act');
+            var list = ensureIds(readList());
+            var idx = list.findIndex(function(x){ return x.id === id; });
+            if(idx === -1){ alert('Registro no encontrado.'); return; }
+            if(act === 'del'){
+              if(confirm('¿Eliminar este registro?')){ list.splice(idx,1); writeList(list); hydrate(); }
+              return;
+            }
+            if(act === 'edit'){
+              var e = list[idx];
+              var estado = prompt('Estado (pendiente, en curso, completo):', e.status || 'pendiente');
+              if(estado===null) return;
+              var responsable = prompt('Responsable:', e.responsable || '');
+              if(responsable===null) return;
+              var notas = prompt('Notas:', e.notas || '');
+              if(notas===null) return;
+              e.status = estado.trim();
+              e.responsable = responsable.trim();
+              e.notas = notas.trim();
+              writeList(list);
+              hydrate();
+            }
+          }
+        });
+
+        var form = document.getElementById('bitacora-form');
+        if(form){
+          form.addEventListener('submit', function(ev){
+            ev.preventDefault();
+            var fd = new FormData(form);
+            var fecha = fd.get('fecha');
+            var origen = fd.get('origen');
+            var responsable = fd.get('responsable');
+            var estado = fd.get('estado');
+            var notas = fd.get('notas') || '';
+            var tareas = String(fd.get('tareas')||'').split(/\n+/).map(function(s){ return s.trim(); }).filter(Boolean).map(function(label){ return { label: label }; });
+            if(!tareas.length){ alert('Agrega al menos una actividad.'); return; }
+            var list = readList();
+            list.push({ date: fecha+'T00:00:00.000Z', origin: origen, responsable: responsable, status: estado, notas: notas, tasks: tareas });
+            writeList(list);
+            form.reset();
+            hydrate();
+            alert('Actividad agregada.');
+          });
+        }
+      }
+
+      function hydrate(){
+        var list = ensureIds(readList());
+        renderTable(list);
+        renderCards(list);
+        var pref = localStorage.getItem('bitacoraView') || 'cards';
+        switchView(pref);
+      }
+
+      if(document.readyState === 'loading'){
+        document.addEventListener('DOMContentLoaded', function(){ bindControls(); hydrate(); });
+      } else { bindControls(); hydrate(); }
+    })();
+  </script>
+</body>
+</html>

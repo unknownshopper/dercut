@@ -18,59 +18,12 @@
   <meta name="twitter:description" content="Principios de IA en segmentación, diversidad creativa, setup operativo, métricas y checklist de lanzamiento." />
   <meta name="twitter:image" content="tus.png?v=1" />
   <link rel="icon" type="image/png" href="tus.png?v=1" />
-  <style>
-    :root { --maxw: 980px; --space: 8px; --bmw: #1C69D4; }
-    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    *, *:before, *:after { box-sizing: inherit; }
-    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
-    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: var(--bmw); }
-    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; flex-wrap: wrap; }
-    .title .brand { display: flex; align-items: center; gap: 10px; }
-    .title .brand .logo { height: 40px; width: auto; display: block; }
-    h1 { margin: 0; font-size: 28px; line-height: 1.25; font-weight: 700; letter-spacing: 0.2px; color: #fff; text-align: right; }
-    .meta { color: #fff; font-size: 14px; flex: 1 1 100%; text-align: center; }
-    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 20px; }
-    p { margin: 0 0 calc(var(--space) * 2); }
-    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; padding: 0; }
-    li { margin: calc(var(--space) * 1) 0; }
-    .card { border: 1px solid #ebebeb; background: #fff; border-radius: 8px; padding: 14px 16px; box-shadow: 0 1px 0 rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.04); }
-    .grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
-    @media (min-width: 900px) { .grid.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-    .muted { color: #666; font-size: 13px; }
-    .actions { display: flex; justify-content: flex-end; gap: 8px; margin: 8px 0 0; }
-    .btn { appearance: none; border: 1px solid #222; background: #111; color: #fff; padding: 8px 12px; border-radius: 8px; font-weight: 600; cursor: pointer; text-decoration: none; }
-    .btn:hover { filter: brightness(0.97); }
-    .footer { padding-top: calc(var(--space) * 2); margin-top: calc(var(--space) * 2); }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
-    .footer .col ul { list-style: none; margin: 0; padding: 0; }
-    .footer .col li { margin: 2px 0; }
-    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
-    .footer a:hover { border-bottom-color: #000; }
-    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
-    /* Print */
-    @page { size: A4; margin: 0; }
-    @media print {
-      html, body { margin: 0; }
-      .wrap { width: calc(210mm - 20mm); padding: 10mm; max-width: none; margin: 0 auto; }
-      header { display: none !important; }
-      .print-header { display: flex !important; justify-content: space-between; align-items: center; gap: 12px; margin: 0 0 6mm; }
-      .print-header .left { display: flex; align-items: center; gap: 8px; }
-      .print-header .right { text-align: right; }
-      .print-header .logo { height: 14mm; width: auto; }
-      .print-header h1 { margin: 0; font-size: 18px; color: #111; }
-      .print-header .sub { font-size: 12px; color: #555; }
-      .footer { width: calc(210mm - 20mm); padding: 0 10mm; margin: 0 auto; }
-      .actions { display: none !important; }
-      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      a { text-decoration: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body class="doc">
   <div class="wrap">
     <!-- Cabecera ejecutiva solo para impresión -->
-    <div class="print-header" style="display:none">
+    <div class="print-header">
       <div class="left">
         <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
       </div>

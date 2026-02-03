@@ -4,73 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aviso de Privacidad y Confidencialidad</title>
-  <style>
-    :root { --maxw: 980px; --space: 8px; }
-    html { box-sizing: border-box; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
-    *, *:before, *:after { box-sizing: inherit; }
-    body { margin: 0; background: #fff; color: #0a0a0a; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial; line-height: 1.65; }
-    .wrap { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 5) calc(var(--space) * 3); }
-    header { border-bottom: 1px solid #e6e6e6; margin-bottom: calc(var(--space) * 3); background: #1C69D4; }
-    .title { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: calc(var(--space) * 2) 0; }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .logo { height: 36px; width: auto; display: block; }
-    h1 { margin: 0; font-size: 24px; letter-spacing: .2px; color: #fff;}
-    h2 { margin: calc(var(--space) * 3) 0 calc(var(--space) * 1); font-size: 18px; }
-    h3 { margin: calc(var(--space) * 2) 0 calc(var(--space) * 1); font-size: 16px; }
-    .meta { color: #4a4a4a; font-size: 14px; }
-    .section { padding: calc(var(--space) * 2) 0; border-top: 1px solid #f2f2f2; }
-    p { margin: 0 0 calc(var(--space) * 2); }
-    ul { margin: var(--space) 0 calc(var(--space) * 2) 20px; }
-    li { margin: calc(var(--space) * 1) 0; }
-    .small { font-size: 13px; color: #666; }
-    .box { border: 1px solid #e6e6e6; border-radius: 8px; padding: 14px 16px; background: #fff; }
-    .note { color: #666; font-size: 12px; }
-    a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-    a:hover { text-decoration-thickness: 2px; }
-    .navbar { position: sticky; top: 0; background: #fff; border-bottom: 1px solid #e6e6e6; z-index: 20; }
-    .navbar .inner { max-width: var(--maxw); margin: 0 auto; padding: calc(var(--space) * 1.5) calc(var(--space) * 3); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    .navbar .brand { display: flex; align-items: center; gap: 10px; }
-    .navbar .brand img { height: 28px; width: auto; }
-    .navbar .links { display: flex; gap: 16px; align-items: center; }
-    .navbar a { color: inherit; text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 2px; }
-    .navbar a:hover, .navbar a.active { border-bottom-color: #000; }
-    .navbar .toggle { display: none; background: none; border: 1px solid #ddd; padding: 6px 8px; border-radius: 6px; font-size: 14px; }
-    @media (max-width: 720px) {
-      .navbar .links { display: none; position: absolute; top: 54px; right: 12px; background: #fff; border: 1px solid #e6e6e6; border-radius: 8px; padding: 8px 10px; flex-direction: column; min-width: 180px; }
-      .navbar .links a { padding: 6px 4px; }
-      .navbar.open .links { display: flex; }
-      .navbar .toggle { display: inline-block; }
-    }
-    .footer { padding-top: calc(var(--space) * 2); }
-    .footer-grid { display: grid; grid-template-columns: 1fr; gap: 12px; align-items: start; }
-    .footer .col ul { list-style: none; margin: 0; padding: 0; }
-    .footer .col li { margin: 2px 0; }
-    .footer a { color: inherit; text-decoration: none; border-bottom: 1px solid #ddd; padding-bottom: 1px; }
-    .footer a:hover { border-bottom-color: #000; }
-    .footer-bottom { margin-top: 12px; padding-top: 12px; border-top: 1px solid #e6e6e6; display: flex; justify-content: space-between; align-items: center; color: #555; }
-    @media (min-width: 700px) { .footer-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-    @media print { .wrap { padding: 0 12px; } header { border: 0; } .box { break-inside: avoid; } a { text-decoration: none; } }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-  <nav class="navbar" id="topnav">
-    <div class="inner">
-      <div class="brand">
-        <img src="tus.png" alt="The Unknown Shopper" />
-      </div>
-      <button class="toggle" aria-label="Abrir menú" id="navToggle">☰</button>
-      <div class="links" style="display: none;">
-        <a href="estructura.html">Estructura</a>
-        <a href="briefemp.html">Brief</a>
-        <a href="sla.html">SLA</a>
-        <a href="aviso.html" class="active">Aviso</a>
-      </div>
-      <div class="links">
-        <a href="propeco.html">Propuesta Económica</a>
-    
-      </div>
-    </div>
-  </nav>
+<body class="doc">
   <div class="wrap">
     <header>
       <div class="title">
@@ -186,8 +122,11 @@
             <li>&nbsp;</li>
           </ul>
         </div>
-        <img src="tus.png" alt="The Unknown Shopper" class="logo" style="width: 100px;">
-       
+        <div class="col">
+          <ul>
+            <li><a href="aviso.html">Aviso de Privacidad</a></li>
+          </ul>
+        </div>
         <div class="col">
           <ul>
             <li>&nbsp;</li>
@@ -201,12 +140,6 @@
       </div>
     </footer>
   </div>
-  <script>
-    (function(){
-      var nav = document.getElementById('topnav');
-      var btn = document.getElementById('navToggle');
-      if(btn && nav){ btn.addEventListener('click', function(){ nav.classList.toggle('open'); }); }
-    })();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

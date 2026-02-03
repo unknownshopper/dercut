@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checklist Operativo · Dermo Cutánea</title>
+  <meta name="description" content="Checklist operativo abreviado para ejecutar el día a día en social y e‑commerce: calendario simple, próximos pasos y control de estado." />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Checklist Operativo · Dermo Cutánea" />
+  <meta property="og:description" content="Checklist diario y semanal con próximos pasos para social y e‑commerce." />
+  <meta property="og:image" content="tus.png?v=1" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:alt" content="The Unknown Shopper" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Checklist Operativo · Dermo Cutánea" />
+  <meta name="twitter:description" content="Checklist diario y semanal con próximos pasos para social y e‑commerce." />
+  <meta name="twitter:image" content="tus.png?v=1" />
+  <link rel="icon" type="image/png" href="tus.png?v=1" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="ops">
+  <div class="wrap">
+    <!-- Cabecera ejecutiva solo para impresión -->
+    <div class="print-header">
+      <div class="left">
+        <img src="tus.png?v=1" alt="The Unknown Shopper" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+      </div>
+      <div class="right">
+        <h1>Checklist Operativo</h1>
+        <div class="sub">Social + E‑commerce · Próximas acciones</div>
+      </div>
+    </div>
+
+    <header>
+      <div class="title">
+        <div class="brand">
+          <img src="dercut.png?v=1" alt="Dermo Cutánea" class="logo" onerror="this.onerror=null;this.src='tus.png';" />
+          <h1>Checklist Operativo</h1>
+        </div>
+        <div class="meta">Social + E‑commerce · Próximas acciones</div>
+      </div>
+      <div class="actions">
+        <button class="btn" data-action="print">Descargar PDF</button>
+      </div>
+    </header>
+
+    <nav class="planner-tabs">
+      <a href="#view-daily" class="pill active"><span class="dot"></span> Diario</a>
+      <a href="#view-week" class="pill"><span class="dot" style="background:#34d399"></span> Semana</a>
+      <a href="#view-month" class="pill"><span class="dot" style="background:#f59e0b"></span> Mes</a>
+      <a href="#view-q" class="pill"><span class="dot" style="background:#60a5fa"></span> 3 meses</a>
+      <a href="#view-6m" class="pill"><span class="dot" style="background:#a78bfa"></span> 6 meses</a>
+      <a href="#view-12m" class="pill"><span class="dot" style="background:#f472b6"></span> 12 meses</a>
+    </nav>
+
+    <div class="planner">
+      <section id="view-daily" class="planner-section">
+        <div class="card">
+          <h2>Hoy <span class="muted date-label"></span></h2>
+          <div class="agenda">
+            <div class="slot"><div class="time">09:00</div><div><label><input type="checkbox" /> Revisar DM/comentarios · responder ≤ 2 h</label></div></div>
+            <div class="slot"><div class="time">11:00</div><div><label><input type="checkbox" /> Publicaciones IG/FB/TikTok por estado</label></div></div>
+            <div class="slot"><div class="time">13:00</div><div><label><input type="checkbox" /> Validar UTMs y destinos</label></div></div>
+            <div class="slot"><div class="time">16:00</div><div><label><input type="checkbox" /> Monitoreo de pauta (pacing/creatives)</label></div></div>
+          </div>
+          <div class="actions" style="margin-top: 10px;">
+            <button class="action-btn" data-action="send-bitacora" disabled>Enviar a bitácora</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-week" class="planner-section">
+        <div class="card">
+          <h2>Semana <span class="muted date-label"></span></h2>
+          <div class="actions" style="margin: 6px 0 10px;">
+            <button class="action-btn small" data-action="toggle-week-layout">Cambiar a filas</button>
+          </div>
+          <div class="week-grid">
+            <div class="day-col"><div class="head">Lun</div><div class="body"><div>Plan contenidos</div></div></div>
+            <div class="day-col"><div class="head">Mar</div><div class="body"><div>Creatividades A/B</div></div></div>
+            <div class="day-col"><div class="head">Mié</div><div class="body"><div>UGC sucursales</div></div></div>
+            <div class="day-col"><div class="head">Jue</div><div class="body"><div>Landings/velocidad</div></div></div>
+            <div class="day-col"><div class="head">Vie</div><div class="body"><div>Reporte quincenal</div></div></div>
+            <div class="day-col"><div class="head">Sáb</div><div class="body"><div>Programación</div></div></div>
+            <div class="day-col"><div class="head">Dom</div><div class="body"><div>Revisión ligera</div></div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-month" class="planner-section">
+        <div class="card">
+          <h2>Mes <span class="muted date-label"></span></h2>
+          <div class="month-grid">
+            <div class="cell"><div class="date">1</div><div class="notes">Kickoff</div></div>
+            <div class="cell"><div class="date">2</div></div>
+            <div class="cell"><div class="date">3</div></div>
+            <div class="cell"><div class="date">4</div></div>
+            <div class="cell"><div class="date">5</div></div>
+            <div class="cell"><div class="date">6</div></div>
+            <div class="cell"><div class="date">7</div></div>
+            <div class="cell"><div class="date">8</div></div>
+            <div class="cell"><div class="date">9</div></div>
+            <div class="cell"><div class="date">10</div></div>
+            <div class="cell"><div class="date">11</div></div>
+            <div class="cell"><div class="date">12</div></div>
+            <div class="cell"><div class="date">13</div></div>
+            <div class="cell"><div class="date">14</div></div>
+            <div class="cell"><div class="date">15</div></div>
+            <div class="cell"><div class="date">16</div></div>
+            <div class="cell"><div class="date">17</div></div>
+            <div class="cell"><div class="date">18</div></div>
+            <div class="cell"><div class="date">19</div></div>
+            <div class="cell"><div class="date">20</div></div>
+            <div class="cell"><div class="date">21</div></div>
+            <div class="cell"><div class="date">22</div></div>
+            <div class="cell"><div class="date">23</div></div>
+            <div class="cell"><div class="date">24</div></div>
+            <div class="cell"><div class="date">25</div></div>
+            <div class="cell"><div class="date">26</div></div>
+            <div class="cell"><div class="date">27</div></div>
+            <div class="cell"><div class="date">28</div></div>
+            <div class="cell"><div class="date">29</div></div>
+            <div class="cell"><div class="date">30</div></div>
+            <div class="cell"><div class="date">31</div></div>
+            <div class="cell"><div class="date">&nbsp;</div></div>
+            <div class="cell"><div class="date">&nbsp;</div></div>
+            <div class="cell"><div class="date">&nbsp;</div></div>
+            <div class="cell"><div class="date">&nbsp;</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-q" class="planner-section">
+        <div class="card">
+          <h2>3 meses <span class="muted date-label"></span></h2>
+          <div class="mini-cal">
+            <div class="mini"><div class="title">Mes 1</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">Mes 2</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">Mes 3</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-6m" class="planner-section">
+        <div class="card">
+          <h2>6 meses <span class="muted date-label"></span></h2>
+          <div class="mini-cal">
+            <div class="mini"><div class="title">M1</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">M2</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">M3</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">M4</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">M5</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">M6</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="view-12m" class="planner-section">
+        <div class="card">
+          <h2>12 meses <span class="muted date-label"></span></h2>
+          <div class="mini-cal">
+            <div class="mini"><div class="title">Q1</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">Q2</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">Q3</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+            <div class="mini"><div class="title">Q4</div><div class="grid">
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+            </div></div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="card">
+      <h2>Hoy</h2>
+      <ul>
+        <li><label><input type="checkbox" /> Revisar bandejas (DM/comentarios) y responder ≤ 2 h hábiles.</label></li>
+        <li><label><input type="checkbox" /> Publicar piezas del día según calendario por estado/categoría (IG/FB/TikTok).</label></li>
+        <li><label><input type="checkbox" /> Validar links con UTMs correctas y destinos funcionales.</label></li>
+        <li><label><input type="checkbox" /> Monitorear performance de anuncios del día (pacing/creatives activos).</label></li>
+        <li><label><input type="checkbox" /> Recolectar UGC de sucursales/clientes y clasificar en banco de assets.</label></li>
+      </ul>
+      <div class="small">
+        <strong>Definiciones:</strong>
+        <span class="note"><strong>DM</strong>: mensajes directos.</span>
+        <span class="note"><strong>UTM</strong>: etiquetas en URL para medir origen de tráfico.</span>
+        <span class="note"><strong>Pacing</strong>: ritmo de gasto/entrega del presupuesto.</span>
+        <span class="note"><strong>UGC</strong>: contenido generado por usuarios/clientes.</span>
+      </div>
+    </section>
+
+    <section class="grid two">
+      <div class="card">
+        <h2>Esta semana</h2>
+        <ul>
+          <li><label><input type="checkbox" /> Plan de contenidos por estado (3‑5 piezas IG/FB · 3‑4 TikTok).</label></li>
+          <li><label><input type="checkbox" /> Rotar creatividades por señales (CTR/CVR/coste add_to_cart).</label></li>
+          <li><label><input type="checkbox" /> Actualizar catálogo/feeds y etiquetas de producto.</label></li>
+          <li><label><input type="checkbox" /> Revisión de landings: velocidad móvil y coherencia con anuncios.</label></li>
+          <li><label><input type="checkbox" /> Consolidar reseñas y testimonios locales.</label></li>
+        </ul>
+        <div class="small">
+          <strong>Definiciones:</strong>
+          <span class="note"><strong>CTR</strong>: tasa de clics.</span>
+          <span class="note"><strong>CVR</strong>: tasa de conversión.</span>
+          <span class="note"><strong>add_to_cart</strong>: evento de agregar al carrito.</span>
+          <span class="note"><strong>Catálogo/Feed</strong>: lista de productos para anuncios dinámicos.</span>
+          <span class="note"><strong>Landing</strong>: página de destino del enlace.</span>
+        </div>
+      </div>
+      <div class="card">
+        <h2>Revisión de performance</h2>
+        <ul>
+          <li><label><input type="checkbox" /> Métricas clave: CTR, CPC, add_to_cart (semana 1).</label></li>
+          <li><label><input type="checkbox" /> CVR, CPA, ROAS (semana 2+), tendencias por estado.</label></li>
+          <li><label><input type="checkbox" /> Análisis de comentarios y señal de engagement.</label></li>
+          <li><label><input type="checkbox" /> Ajustes de presupuesto ≤ 20%/día para no resetear learning.</label></li>
+          <li><label><input type="checkbox" /> Registro de aprendizajes y próximos tests A/B.</label></li>
+        </ul>
+        <div class="small">
+          <strong>Definiciones:</strong>
+          <span class="note"><strong>CPC</strong>: coste por clic.</span>
+          <span class="note"><strong>CPA</strong>: coste por acción/conversión.</span>
+          <span class="note"><strong>ROAS</strong>: retorno de gasto publicitario.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Calendario/timeline próximo</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>Semana 1 (activación)</h3>
+          <ul>
+            <li><label><input type="checkbox" /> Alta TikTok y link in bio por red.</label></li>
+            <li><label><input type="checkbox" /> GA4 + Pixel + CAPI verificados.</label></li>
+            <li><label><input type="checkbox" /> Feeds y catálogos listos con UTMs.</label></li>
+            <li><label><input type="checkbox" /> Calendario piloto por estado.</label></li>
+          </ul>
+          <div class="small">
+            <strong>Definiciones:</strong>
+            <span class="note"><strong>GA4</strong>: Google Analytics 4 para medición.</span>
+            <span class="note"><strong>Pixel</strong>: código de seguimiento para eventos.</span>
+            <span class="note"><strong>CAPI</strong>: API de Conversiones (envío de eventos del servidor).</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Semana 2 (aprendizaje)</h3>
+          <ul>
+            <li><label><input type="checkbox" /> Mantener pacing; no cambios disruptivos.</label></li>
+            <li><label><input type="checkbox" /> Test A/B: formato/apertura/CTA/creador.</label></li>
+            <li><label><input type="checkbox" /> Ajuste de creatividades según señales.</label></li>
+            <li><label><input type="checkbox" /> Revisión de landings y velocidad.</label></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Semana 3 (optimización)</h3>
+          <ul>
+            <li><label><input type="checkbox" /> Refinar audiencias y exclusiones.</label></li>
+            <li><label><input type="checkbox" /> Rotación de piezas de bajo desempeño.</label></li>
+            <li><label><input type="checkbox" /> Bundles/temáticas por estado.</label></li>
+            <li><label><input type="checkbox" /> Revisión de QR/UTMs por sucursal.</label></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Semana 4 (escala)</h3>
+          <ul>
+            <li><label><input type="checkbox" /> Incrementos de presupuesto controlados.</label></li>
+            <li><label><input type="checkbox" /> Consolidación de aprendizajes y playbook.</label></li>
+            <li><label><input type="checkbox" /> Preparación de corte quincenal/mensual.</label></li>
+            <li><label><input type="checkbox" /> Definir próximos experimentos.</label></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Control rápido por estado</h2>
+      <table class="ops-table">
+        <thead>
+          <tr>
+            <th>Estado</th>
+            <th>Publicaciones</th>
+            <th>UTMs/QR</th>
+            <th>Catálogo</th>
+            <th>SLAs DM</th>
+            <th>Observaciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tabasco</td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Yucatán</td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Chiapas</td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td><label><input type="checkbox" /> OK</label></td>
+            <td></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="small">
+        <strong>Definiciones:</strong>
+        <span class="note"><strong>SLA</strong>: acuerdo de nivel de servicio (tiempos de respuesta).</span>
+        <span class="note"><strong>QR</strong>: código escaneable que dirige a una URL.</span>
+        <span class="note"><strong>UTM</strong>: etiquetas en URL para medir origen de tráfico.</span>
+      </div>
+    </section>
+  </div>
+
+  <footer class="section small footer">
+    <div class="footer-grid">
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+      <div class="col"><ul><li><a href="aviso.html">Aviso de Privacidad</a></li></ul></div>
+      <div class="col"><ul><li>&nbsp;</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <span>the@unknownshoppers.com</span>
+      <span>&nbsp;</span>
+      <span>The Unknown Shopper © 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
